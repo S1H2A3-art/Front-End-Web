@@ -8,16 +8,23 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-      span,div{
-        display:inline-block;
-        text-align: center;
-      }
+        header{
+           position:fixed;
+           background-color: white;
+        }
+        span,div{
+            display:inline-block;
+            text-align: center;
+        }
       
       #logo {
         background-color: lightpink;
         border: 1px solid black;
+        
         width: 150px;
         height: 40px;
+        
+       
       }
       #search-bar {
         background-color: grey;
@@ -51,14 +58,17 @@
         height: 40px;
         margin-top: 10px;
       }
-      #img_row_1 {
+      #first_row{
+        margin-top: 200px;
+      }
+      .img_row_1 {
         background-color: grey;
         border: 1px solid black;
         width: 840px ;
-        height: 200px;
+        height: 250px;
         margin-top: 40px;
       }
-      #description_row_1 {
+      .description_row_1 {
         background-color: grey;
         border: 1px solid black;
         width: 840px;
@@ -74,15 +84,20 @@
     
 
   <body>
-    
+    <header>
       <span id = "logo">Logo</span>
       <span id = "search-bar">Search bar</span>
       <span id = "post">post</span>
       <span id = "setting">setting</span>
       <span id = "filter">filter</span>
+      <span id = "category">category</span>
+    </header>
     
-    <span id = "category">category</span>
-    <span id = "img_row_1">img_row_1</span>
-    <span id = "description_row_1">description_row_1</span>
+    <span class = "img_row_1" id="first_row">img_row_1</span>
+    <span class = "description_row_1">description_row_1</span>
+    <span class = "img_row_1">img_row_1</span>
+    <span class = "description_row_1">description_row_1</span>
+    <span class = "img_row_1">img_row_1</span>
+    <span class = "description_row_1">description_row_1</span>
   </body>
 </html>
