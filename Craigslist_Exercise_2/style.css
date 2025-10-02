@@ -102,6 +102,10 @@ h3 {
     
 }
 
+.category-item:hover{
+    text-decoration: underline;
+}
+
 .item-row {
     margin-left: 2rem;
     display:flex;
