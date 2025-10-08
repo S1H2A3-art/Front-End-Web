@@ -1,24 +1,6 @@
 /*local css information*/
 
-@media screen and (max-width: 1780px) {
-    #search-panel{
-        flex-direction: column;
-    }
-    #resetButton{
-        margin-top: 1rem;
-    }
-    #searchButton{
-        margin-top: 1rem;
-        margin-left: 0;
-    }
-}
 
-@media screen and (max-width: 1380px) {
-    #information-panel{
-        align-self: start;
-        left: 3%;
-    }
-}
 
 #information-panel{
     z-index: 1;
@@ -217,6 +199,25 @@
     background: rgba(0, 0, 0, 0.599); 
 }
 
+@media screen and (max-width: 1780px) {
+    #search-panel{
+        flex-direction: column;
+    }
+    #resetButton{
+        margin-top: 1rem;
+    }
+    #searchButton{
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 1380px) {
+    #information-panel{
+        align-self: start;
+        left: 3%;
+    }
+}
 
 
 
