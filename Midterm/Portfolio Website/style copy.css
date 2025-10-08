@@ -1,0 +1,207 @@
+
+
+@font-face {
+  font-family: "manrope"; /* Name you'll use in font-family */
+  src: url("Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Bold 700.otf");
+  font-weight: bold; /* Optional: define weight */
+}
+
+@font-face {
+  font-family: "manrope"; /* Name you'll use in font-family */
+  src: url("/Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Regular 400.otf");
+  font-weight: normal; /* Optional: define weight */
+}
+
+@font-face {
+  font-family: "manrope"; /* Name you'll use in font-family */
+  src: url("/Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Light 300.otf");
+  font-weight: lighter; /* Optional: define weight */
+}
+
+@media screen and (max-width: 1380px) {
+  #menu-bar{
+    height: 10%;
+    position: absolute;
+    width:100%;
+    justify-content: start;
+    align-items: start;
+  }
+  .menu-items{
+    flex-direction: row;
+    margin-top: 6rem;
+    margin-left: 15rem;
+    width: 100%;
+  }
+  .menu-item{
+    margin-left: 0;
+    margin-right: 4rem;
+  }
+  #menuIcon{
+    margin-top: 5rem;
+  }
+}
+
+button:hover{
+  opacity:100%;
+  box-shadow: 0.1rem 0.1rem 15px rgba(0, 0, 0, 0.5);
+}
+
+button:active{
+    box-shadow: 0.1rem 0.1rem 15px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.599);
+    background: rgba(0, 0, 0, 0.599); 
+}
+
+a:link:hover{
+    opacity:100%;
+    color: red;
+}
+
+a:visited:hover{
+    opacity:100%;
+    color: red;
+}
+
+a:link:active{
+  color:rgb(97, 97, 97);
+}
+
+.menuButton:hover div{
+  opacity:100%;
+  border-color: red;
+}
+
+.menuButton:hover #menuName{
+  opacity:100%;
+  color: red;
+}
+
+.menuButton:active #menuName{
+  opacity:100%;
+  color: rgb(0, 0, 0);
+}
+
+.menuButton:active div{
+  opacity:100%;
+  border-color: rgb(0, 0, 0);
+}
+
+* {
+  font-family:"manrope";
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: flex;
+}
+
+h1 {
+  font-family:"manrope";
+  font-weight: normal;
+  font-size:7rem;
+}
+
+h3 {
+  font-family:"manrope";
+  font-weight: normal;
+  font-size:2rem;
+}
+
+p{
+  font-family:"manrope";
+  font-weight: normal;
+  font-size:1.5rem;
+}
+
+.red{
+  color:red;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.menuButton{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 6%;
+}
+
+#menuName{
+  display: block;
+  margin-left: 15rem;
+  white-space: nowrap;
+  border: none;
+  transform: rotate(90deg) translate(0rem, 7rem);
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.menuIcon{
+  margin-left: 7rem;
+  margin-top: 150%;
+  border-top: 0.4rem solid black;
+  border-bottom: 0.4rem solid black; 
+  height: 0.8rem;
+  color: rgba(255, 255, 255, 0);
+  width:2rem;
+}
+
+#menu-bar{
+  background: linear-gradient(to bottom right, rgba(238, 238, 238, 0.811), rgba(238, 238, 238, 0.811),rgba(255, 0, 68, 0.038));
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  position: absolute;
+  width:20%;
+  justify-content: end;
+  align-items: end;
+}
+
+.menu-items{
+  display: flex;
+  flex-direction: column;
+  height: 75%;
+  width: 80%;
+}
+
+.menu-item{
+  border-radius: none;
+  color: black;
+  font-size: 3rem;
+  background-color: rgba(255, 255, 255, 0);
+  height: 12%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.menu-item a{
+  color:black;
+  font-weight: lighter;
+}
+
+.circle {
+  margin-right: 30%;
+  width: 1.4rem; 
+  height: 1.4rem; 
+  background: radial-gradient(circle, red, rgb(255, 0, 150));
+  border-radius: 50%;
+  opacity: 70%;
+}
+
+
+
