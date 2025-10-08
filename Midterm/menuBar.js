@@ -22,7 +22,7 @@ function toggleMenu(){
         let currentWindow = window.location.href;
 
         //determines which page it's currently on
-        if(currentWindow == "http://127.0.0.1:5500/Navigation_Page/Explorer.html"){
+        if(currentWindow == "https://s1h2a3-art.github.io/Front-End-Web/Midterm/Navigation_Page/Explorer.html"){
             let navigationPage = document.getElementById("Navigation_Page");
             navigationPage.innerHTML = `
             <a>Navigator</a>
@@ -35,7 +35,7 @@ function toggleMenu(){
             `
         }
         
-        if(currentWindow == "http://127.0.0.1:5500/Archive_Page/Archive.html"){
+        if(currentWindow == "https://s1h2a3-art.github.io/Front-End-Web/Midterm/Archive_Page/Archive.html"){
             let archivePage = document.getElementById("Archive_Page");
             archivePage.innerHTML = `
             <a>Archive</a>

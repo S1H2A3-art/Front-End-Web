@@ -1,5 +1,4 @@
 
-
 @font-face {
   font-family: "manrope"; /* Name you'll use in font-family */
   src: url("Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Bold 700.otf");
@@ -8,13 +7,13 @@
 
 @font-face {
   font-family: "manrope"; /* Name you'll use in font-family */
-  src: url("/Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Regular 400.otf");
+  src: url("Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Regular 400.otf");
   font-weight: normal; /* Optional: define weight */
 }
 
 @font-face {
   font-family: "manrope"; /* Name you'll use in font-family */
-  src: url("/Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Light 300.otf");
+  src: url("Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Light 300.otf");
   font-weight: lighter; /* Optional: define weight */
 }
 
