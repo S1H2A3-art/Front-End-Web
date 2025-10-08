@@ -23,6 +23,17 @@ h3 {
     text-align: center;
 }
 
+.white-text:hover{
+    color: rgba(86, 45, 135);
+    background-color: #F3FCF0;
+}
+
+#post:hover{
+    color: #FFD23F;
+    background-color: rgba(86, 45, 135);
+    border: #FFD23F ridge 1px;
+}
+
 .purple-text {
     color: rgba(86, 45, 135);
     text-align: center;
