@@ -17,10 +17,10 @@ function toggleMenu(){
             informationPanel.style.left="17%";
             }       
         }
-
+    
         state = true;
         let currentWindow = window.location.href;
-
+        console.log(currentWindow);
         //determines which page it's currently on
         if(currentWindow == "https://s1h2a3-art.github.io/Front-End-Web/Midterm/Navigation_Page/Explorer.html"){
             let navigationPage = document.getElementById("Navigation_Page");

@@ -17,28 +17,6 @@
   font-weight: lighter; /* Optional: define weight */
 }
 
-@media screen and (max-width: 1380px) {
-  #menu-bar{
-    height: 10%;
-    position: absolute;
-    width:100%;
-    justify-content: start;
-    align-items: start;
-  }
-  .menu-items{
-    flex-direction: row;
-    margin-top: 6rem;
-    margin-left: 15rem;
-    width: 100%;
-  }
-  .menu-item{
-    margin-left: 0;
-    margin-right: 4rem;
-  }
-  #menuIcon{
-    margin-top: 5rem;
-  }
-}
 
 button:hover{
   opacity:100%;
@@ -200,6 +178,29 @@ p{
   background: radial-gradient(circle, red, rgb(255, 0, 150));
   border-radius: 50%;
   opacity: 70%;
+}
+
+@media screen and (max-width: 1380px) {
+  #menu-bar{
+    height: 10%;
+    position: absolute;
+    width:100%;
+    justify-content: start;
+    align-items: start;
+  }
+  .menu-items{
+    flex-direction: row;
+    margin-top: 6rem;
+    margin-left: 15rem;
+    width: 100%;
+  }
+  .menu-item{
+    margin-left: 0;
+    margin-right: 4rem;
+  }
+  #menuIcon{
+    margin-top: 5rem;
+  }
 }
 
 
