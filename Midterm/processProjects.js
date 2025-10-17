@@ -12,10 +12,6 @@ let conceptsNum = 0;
 let relatedness = [];
 let maxRelation = 0;
 
-function preload(){
-    projectInformation = loadJSON("Projects/projectInformation.json", processProjectsInformation);
-}
-
 function processProjectsInformation(results){
   //set up projects array and concepts array
   for(let project of results){
