@@ -51,7 +51,7 @@
     let max = Number.MIN_VALUE;
 
     const values2 = [3, 11, 7, 2, 9, 10];
-
+    
     for(let value of values2){
         if(value > max){
             max = value;
@@ -59,6 +59,7 @@
     }
 
     console.log(max);
+    console.log(Math.max(...values2));
 
 //4.List of words
 
