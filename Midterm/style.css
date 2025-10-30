@@ -4,6 +4,11 @@
   src: url("Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Bold 700.otf");
   font-weight: bold; /* Optional: define weight */
 }
+@font-face {
+  font-family: "manrope"; /* Name you'll use in font-family */
+  src: url("Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Medium 500.otf");
+  font-weight: 500; /* Optional: define weight */
+}
 
 @font-face {
   font-family: "manrope"; /* Name you'll use in font-family */
@@ -17,7 +22,9 @@
   font-weight: lighter; /* Optional: define weight */
 }
 
-
+body{
+  background-image: radial-gradient(circle at center, rgb(255, 255, 255), rgb(255, 255, 255),rgb(255, 255, 255),rgb(255, 255, 255),rgb(255, 255, 255),rgba(213, 213, 213, 0.535));;
+}
 button:hover{
   opacity:100%;
   box-shadow: 0.1rem 0.1rem 15px rgba(0, 0, 0, 0.5);
@@ -42,6 +49,7 @@ a:visited:hover{
 a:link:active{
   color:rgb(97, 97, 97);
 }
+
 
 .menuButton:hover div{
   opacity:100%;
@@ -94,6 +102,10 @@ p{
   font-size:1.5rem;
 }
 
+a{
+  color:black;
+}
+
 .red{
   color:red;
 }
@@ -111,8 +123,11 @@ p{
 .menuButton{
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   width: 6%;
+  text-decoration: none;
+  color: none;
+  
 }
 
 #menuName{
@@ -123,7 +138,8 @@ p{
   transform: rotate(90deg) translate(0rem, 7rem);
   font-size: 3rem;
   font-weight: bold;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgb(0, 0, 0);
+ 
 }
 
 .menuIcon{
@@ -136,25 +152,25 @@ p{
   width:2rem;
 }
 
-#menu-bar{
-  background: linear-gradient(to bottom right, rgba(238, 238, 238, 0.811), rgba(238, 238, 238, 0.811),rgba(255, 0, 68, 0.038));
+#menuBar{
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.811), rgba(255, 255, 255, 0.811),rgba(255, 0, 68, 0.038));
   display: none;
   flex-direction: column;
   height: 100%;
-  position: absolute;
+  position: fixed;
   width:20%;
   justify-content: end;
   align-items: end;
 }
 
-.menu-items{
+.menuItems{
   display: flex;
   flex-direction: column;
   height: 75%;
   width: 80%;
 }
 
-.menu-item{
+.menuItem{
   border-radius: none;
   color: black;
   font-size: 3rem;
@@ -163,12 +179,12 @@ p{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 }
 
-.menu-item a{
+.menuItem a{
   color:black;
   font-weight: lighter;
+  text-decoration: none;
 }
 
 .circle {
@@ -181,20 +197,20 @@ p{
 }
 
 @media screen and (max-width: 1380px) {
-  #menu-bar{
+  #menuBar{
     height: 10%;
     position: absolute;
     width:100%;
     justify-content: start;
     align-items: start;
   }
-  .menu-items{
+  .menuItems{
     flex-direction: row;
     margin-top: 6rem;
     margin-left: 15rem;
     width: 100%;
   }
-  .menu-item{
+  .menuItem{
     margin-left: 0;
     margin-right: 4rem;
   }

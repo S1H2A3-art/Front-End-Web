@@ -21,7 +21,7 @@
         "concepts":["identity", "fluidity", "externalization","internalization","vessal"],
         "mini_icon":"Projects/Project_Icons/Self_Portrait.png",
         "large_icon":"Projects/Project_Large_Icons/Self_Portrait.png",
-        "page":""
+        "page":"Projects/Project_Pages/Self_Portrait/index.html"
     },
 
     {
@@ -33,7 +33,7 @@
         "concepts":["outer space","simulation","sphere"],
         "mini_icon":"Projects/Project_Icons/Solar System.png",
         "large_icon":"Projects/Project_Large_Icons/Solar System.png",
-        "page":""
+        "page":"Projects/Project_Pages/Solar_System/index.html"
     },
 
     {
@@ -45,7 +45,7 @@
         "concepts":["outer space","simulation","destruction","randomness"],
         "mini_icon":"Projects/Project_Icons/Random Planet Destruction Simulator.png",
         "large_icon":"Projects/Project_Large_Icons/Random Planet Destruction Simulator.png",
-        "page":""
+        "page":"Projects/Project_Pages/Random_Planet_Destruction_Simulator/index.html"
     },
     {
         "title": "Project Anima",
@@ -56,7 +56,7 @@
         "concepts":["eyeball","sensation","game","alienation","dasein"],
         "mini_icon":"Projects/Project_Icons/Project Anima.png",
         "large_icon":"Projects/Project_Large_Icons/Project Anima.png",
-        "page":""
+        "page":"Projects/Project_Pages/Project_Anima/index.html"
     },
     {
         "title": "Eye, Heart, and Knowledge",
@@ -67,7 +67,7 @@
         "concepts":["eyeball", "destruction", "creation","history","human"],
         "mini_icon":"Projects/Project_Icons/Eye, Heart, and Knowledge.png",
         "large_icon":"Projects/Project_Large_Icons/Eye, Heart, and Knowledge.png",
-        "page":""
+        "page":"Projects/Project_Pages/Eye,_Heart,_and_Knowledge/index.html"
     },
     {
         "title": "Shhhh!!!",
@@ -78,7 +78,7 @@
         "concepts":["horror","sensation","game","immersion","silence"],
         "mini_icon":"Projects/Project_Icons/Shhhh!!!.png",
         "large_icon":"",
-        "page":""
+        "page":"Projects/Project_Pages/Shhhh!!!/index.html"
     },
     {
         "title": "Ecosystem",
@@ -89,7 +89,7 @@
         "concepts":["simulation","randomness","life","cycle"],
         "mini_icon":"Projects/Project_Icons/Ecosystem.png",
         "large_icon":"",
-        "page":""
+        "page":"Projects/Project_Pages/Ecosystem/index.html"
     },
     {
         "title": "Water…",
@@ -100,7 +100,7 @@
         "concepts":["experimentation","fluidity","cycle","process","flow"],
         "mini_icon":"Projects/Project_Icons/Water….png",
         "large_icon":"",
-        "page":""
+        "page":"Projects/Project_Pages/Water…/index.html"
     },
     {
         "title": "Aristotle vs the Giant Octopus",
@@ -111,7 +111,7 @@
         "concepts":["game","Aristotle","ocean creatures", "competition"],
         "mini_icon":"Projects/Project_Icons/Aristotle vs the Giant Octopus.png",
         "large_icon":"",
-        "page":""
+        "page":"Projects/Project_Pages/Aristotle_vs_the_Giant_Octopus/index.html"
     },
     {
         "title": "Cosmic Tunes",
@@ -122,7 +122,7 @@
         "concepts":["flow","outer space","tunes","cosmos"],
         "mini_icon":"Projects/Project_Icons/Cosmic Tunes.png",
         "large_icon":"",
-        "page":""
+        "page":"Projects/Project_Pages/Cosmic_Tunes/index.html"
     },
     {
         "title": "Animated Images Experiment",
@@ -133,7 +133,7 @@
         "concepts":["particles","distortion","experimentation"],
         "mini_icon":"Projects/Project_Icons/Animated Images Experiment.png",
         "large_icon":"",
-        "page":""
+        "page":"Projects/Project_Pages/Animated_Images_Experiment/index.html"
     },
     {
         "title": "Snap and Play!",
@@ -144,7 +144,7 @@
         "concepts":["distortion","experimentation","interaction","externalization"],
         "mini_icon":"Projects/Project_Icons/Snap and Play!.png",
         "large_icon":"",
-        "page":""
+        "page":"Projects/Project_Pages/Snap_and_Play!/index.html"
     },
     {
         "title": "Animated Images Experiment 3D",
@@ -155,7 +155,7 @@
         "concepts":["cosmos","experimentation","distortion","particles","process"],
         "mini_icon":"Projects/Project_Icons/Animated Images Experiment 3D.png",
         "large_icon":"",
-        "page":""
+        "page":"Projects/Project_Pages/Animated_Images_Experiment_3D/index.html"
     }
     ,
     {
@@ -167,7 +167,7 @@
         "concepts":["flow","numbers","vessal","simulation"],
         "mini_icon":"Projects/Project_Icons/Matrix.png",
         "large_icon":"",
-        "page":""
+        "page":"Projects/Project_Pages/Matrix/index.html"
     },
     {
         "title": "AR 3D-ize Experiment",
@@ -178,7 +178,7 @@
         "concepts":["eyeball","illusion","alienation","experimentation","mask"],
         "mini_icon":"Projects/Project_Icons/AR 3D-ize Experiment.png",
         "large_icon":"",
-        "page":""
+        "page":"Projects/Project_Pages/AR_3D-ize_Experiment/index.html"
     },
     {
         "title": "The Guidebook for the Conscious Book",
@@ -189,7 +189,7 @@
         "concepts":["consciousness","intelligence","vessal","life","internalization"],
         "mini_icon":"Projects/Project_Icons/The Guidebook for the Conscious Book.png",
         "large_icon":"",
-        "page":""
+        "page":"Projects/The_Guidebook_for_the_Conscious_Book/index.html"
     },
     {
         "title": "Zero Gravity Theatre: The Brothers Karamazov",
@@ -200,7 +200,7 @@
         "concepts":["play","judgement","freedom","devil"],
         "mini_icon":"Projects/Project_Icons/Zero Gravity Theatre - The Brothers Karamazov.png",
         "large_icon":"",
-        "page":""
+        "page":"Projects/Project_Pages/Zero_Gravity_Theatre:_The_Brothers_Karamazov/index.html"
     },
     {
         "title": "Teachable Machine Experiment",
@@ -211,7 +211,7 @@
         "concepts":["distortion","experimentation","particles","power","body"],
         "mini_icon":"Projects/Project_Icons/Teachable Machine Experiment.png",
         "large_icon":"",
-        "page":""
+        "page":"Projects/Project_Pages/Teachable_Machine_Experiment/index.html"
     },
     {
         "title": "Body Segmentation Experiment",
@@ -222,18 +222,50 @@
         "concepts":["body","particles","experimentation","connection","randomness"],
         "mini_icon":"Projects/Project_Icons/Body Segmentation Experiment.png",
         "large_icon":"",
-        "page":""
+        "page":"Projects/Project_Pages/Body_Segmentation_Experiment/index.html"
     },
     {
-        "title": "",
-        "secondary_title": "",
-        "category":"",
-        "description":"",
-        "date":"",
-        "concepts":[],
+        "title": "Self Portrait 2.0",
+        "secondary_title": "Introduction to Machine Learning in the Arts Week 5 ",
+        "category":"javascript",
+        "description":"This project intends to recreate my first creative project in p5.js(Self Portrait) using the faceMesh model.",
+        "date":"October 10, 2025",
+        "concepts":["randomness","mask","identity","externalization"],
         "mini_icon":"",
         "large_icon":"",
-        "page":""
+        "page":"Projects/Project_Pages/Self_Portrait_2.0/index.html"
+    },
+    {
+        "title": "Automatic Blessing Apparatus",
+        "secondary_title": "Introduction to Machine Learning in the Arts Week 6",
+        "category":"javascript",
+        "description":"Create a program that automatically sends a blessing to a person when it detects that that person is coughing.",
+        "date":"October 17, 2025",
+        "concepts":["bless","sickness","automation","God","interaction"],
+        "mini_icon":"",
+        "large_icon":"",
+        "page":"Projects/Project_Pages/Automatic_Blessing_Apparatus/index.html"
+    },
+    {
+        "title": "Aristotle vs Giant Robot Octopuses",
+        "secondary_title": "Introduction to Machine Learning in the Arts Week 7",
+        "category":"javascript",
+        "description":"The intention of this project is to use the ml5 neural network for training the AI of a simple 2D badminton game using neuroevolution. The original version of the game can be accessed via: Aristotle vs the Giant Octopus.",
+        "date":"October 24, 2025",
+        "concepts":["Aristotle","consciousness","cycle","ocean creatures","game"],
+        "mini_icon":"",
+        "large_icon":"",
+        "page":"Projects/Project_Pages/Aristotle_vs_Giant_Robot_Octopuses/index.html"
+    }, {
+        "title": "One Thousand Years Dawn",
+        "secondary_title": "An Analysis of John Gerrard's Digital Installations",
+        "category":"opinion essay",
+        "description":"A man stands firmly on a featureless terrain of dunes that stretches infinitely behind him into the horizon. In front of him rise and fall the tides of the eternally blue sea, veiled by a thin glistening curtain of the reflection of the dawning Sun, which artlessly pronounces its awakening across the new world. ",
+        "date":"March 23, 2025",
+        "concepts":["history","judgement","meaning","automation","alienation"],
+        "mini_icon":"",
+        "large_icon":"",
+        "page":"Projects/Project_Pages/One_Thousand_Years_Dawn/index.html"
     }
     
 ]

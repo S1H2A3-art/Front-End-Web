@@ -7,7 +7,7 @@ let lockMode = -1;
 function preload(){
   font1 = loadFont("../Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Regular 400.otf");
   font2 = loadFont("../Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Bold 700.otf");
- projectInformation = loadJSON("../Projects/projectInformation.json", processProjectsInformation);
+  projectInformation = loadJSON("../Projects/projectInformation.json", processProjectsInformation);
 }
 
 //Determines the user's last input that caused an error
@@ -24,7 +24,7 @@ function updateAlert(){
 //read text field input and select concept based on user's input
 function conceptFinder(){
   let userInput = document.getElementById("searchConcept").value;
-  if(userInput){
+  if(userInput !== undefined){
     for(let i = 0; i < concepts.length; i++){
       if(concepts[i].name == userInput){
         lockMode = i;
@@ -144,11 +144,20 @@ function setup() {
   cam = createCamera();
   cam.setPosition(0, 0, 300);
   cam.lookAt(0, 0, 0);
+
+  let params = new URLSearchParams(window.location.search);
+  let concept = params.get("concept");
+  if (concept) {
+    document.getElementById("searchConcept").value = concept;
+    conceptFinder();
+  }
 }
+
+let showProjectsState = -1;
 
 function draw() {
   background(255);
-
+ 
   //change WEBGL camera settings so closer objects can be seen
   let gl = this._renderer.GL; 
   let fov = PI / 3;
@@ -191,22 +200,26 @@ function draw() {
     translate(c.position.x , c.position.y, c.position.z);
 
     // Draw point
-    stroke(255, 0, map(c.position.x+c.position.y+c.position.z, 0, 200,0,150), map(c.relations, 1, maxRelation, 20, 255));
-    strokeWeight((c.relations / maxRelation) * 30 * (c.relations / maxRelation) + 10);
-    point(0, 0, 0);
+    // stroke(255, 0, map(c.position.x+c.position.y+c.position.z, 0, 200,0,150), map(c.relations, 1, maxRelation, 20, 255));
+    // strokeWeight((c.relations / maxRelation) * 30 * (c.relations / maxRelation) + 10);
+    // point(0, 0, 0);
+    noStroke();
+    fill(255, 0, map(c.position.x+c.position.y+c.position.z, 0, 200,0,150));
+    sphere((c.relations / maxRelation) * 6 * (c.relations / maxRelation) + 1, 20);
 
     // Make text face camera & draw text
     push();
     gl.disable(gl.DEPTH_TEST);
     faceCamera(c.position.x, c.position.y, c.position.z, cam);
     textAlign(CENTER, CENTER);
-    fill(0, 0, 0, map(c.relations, 1, maxRelation, 50, 255));
+    //fill(0, 0, 0, map(c.relations, 1, maxRelation, 50, 255));
+    fill(0,0,0);
     textSize(map(c.relations, 1, maxRelation, 1, 6));
-    translate(0, map(c.relations, 1, maxRelation, 0, -7), 0);
+    translate(0, map(c.relations, 1, maxRelation, 1, 9), 0);
 
     //if concept is selected, make it red
     if(lockMode == concepts.findIndex(obj => obj.name === c.name)){
-      fill(255,0,0);
+      fill(55,0,0);
     }
 
     text(c.name, 0, 0);
@@ -222,11 +235,19 @@ function draw() {
   //adjust camera based on sizes of concepts
   if(lockMode >= 0){
     camera(concepts[lockMode].position.x,concepts[lockMode].position.y,concepts[lockMode].position.z+map(concepts[lockMode].relations,1,maxRelation,50,150),concepts[lockMode].position.x,concepts[lockMode].position.y,concepts[lockMode].position.z);   
+    
+    if(showProjectsState != lockMode){
+      //->showProjects.js
+      showProjects();
+      showProjectsState = lockMode;
+    }
+  }else{
+    document.getElementById("projectsInformation").innerHTML = "";
+    showProjectsState = -1;
   }
   orbitControl();
 
-  //->showProjects.js
-  showProjects();
+  
   
 }
 

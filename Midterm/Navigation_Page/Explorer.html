@@ -19,43 +19,45 @@
       <script src="../menuBar.js"></script>
       <script src="camera.js"></script>
       <script src="suggestedSearch.js"></script>
-
-      <div id="ConceptMap">
-        <script src="ConceptMap.js"></script>
+      <div id = filter> placeholder </div>
+      <div id="conceptMap">
+        <script src="conceptMap.js"></script>
       </div>
     
       <script src="showProjects.js"></script>
     
-      <div id="menu-bar">
-        <div class="menu-items">
-          <div class="menu-item" id="Navigation_Page">
+      <div id="menuBar">
+        <div class="menuItems">
+          <div class="menuItem" id="Navigation_Page">
             <a href="Explorer.html">Navigator</a>
           </div>
-          <div class="menu-item" id="Archive_Page">
+          <div class="menuItem" id="Archive_Page">
             <a href="../Archive_Page/Archive.html">Archive</a>
           </div>
-          <div class="menu-item" id="About_Page">
+          <div class="menuItem" id="About_Page">
             <a href="../About_Page/About.html">About</a>
           </div>
         </div>
       </div>
 
-      <div class="menuButton">
+      <a class="menuButton" href="javascript:void(0);">
         <div class="menuIcon" onclick="toggleMenu()"><!-- ->menuBar.js -->
           placeholder
         </div>
         <div id="menuName"onclick="toggleMenu()"><!-- ->menuBar.js -->
           Shawn Qiu
         </div>
-      </div>
+      </a>
 
       <!-- menu in the bottom left corner -->
-      <div id="information-panel">
-        <h1 style="margin-left: 5rem;"><strong>Concept Navigator</strong></h1>
+      <div id="informationPanel">
+        <h1 ><strong style ="background-image: radial-gradient(ellipse at center, rgb(31, 31, 31),rgb(0, 0, 0));
+    background-clip: text;
+    -webkit-text-fill-color: transparent; ">Navigator</strong></h1>
         <div id="searchAlert">
           *please enter valid concept name
         </div>
-        <div id="search-panel">
+        <div id="searchPanel">
           <div id="searchBar">
             <input id="searchConcept" type="text" placeholder="Enter concept"/>
             <div id="searchAssist">
@@ -64,21 +66,21 @@
           </div>
 
         <div style="display: flex; flex-wrap: nowrap;">
-          <!-- ->ConceptMap.js -->
+          <!-- ->conceptMap.js -->
           <button id="searchButton" onclick="conceptFinder()">search</button>
-          <!-- ->ConceptMap.js -->
+          <!-- ->conceptMap.js -->
           <button id="resetButton" onclick="resetCamera()">reset</button>
        </div> 
       </div>
       
-      <div id="suggested-search">
+      <div id="suggestedSearch">
         </div>
           <!-- innerHTML code from suggestedSearch.js -->
         </div>
 
         <!-- bar on the right -->
         <div id="sidebar">
-          <div id="projects-information">
+          <div id="projectsInformation">
             <!-- innerHTML code from showProjects.js -->
           </div>
         </div>

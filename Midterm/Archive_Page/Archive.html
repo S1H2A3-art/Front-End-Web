@@ -16,53 +16,40 @@
 
   </head>
     <body>
-        <script src="../processProjects.js"></script>
+        <script src="../processProjects.js" defer></script>
 
-        <script src="../menuBar.js"></script>
+        <script src="../menuBar.js" defer></script>
 
-        <script src="archive.js"></script>
+        <script src="Archive.js" defer></script>
+        
 
-        <div id="menu-bar">
-            <div class="menu-items">
-                <div class="menu-item" id="Navigation_Page">
+        <div id="menuBar">
+            <div class="menuItems">
+                <div class="menuItem" id="Navigation_Page">
                     <a href="Explorer.html">Navigator</a>
                 </div>
-                <div class="menu-item" id="Archive_Page">
+                <div class="menuItem" id="Archive_Page">
                     <a href="../Archive_Page/Archive.html">Archive</a>
                 </div>
 
-                <div class="menu-item" id="About_Page">
+                <div class="menuItem" id="About_Page">
                     <a href="../About_Page/About.html">About</a>
                 </div>
             </div>
         </div>
 
-        <div class="menuButton">
+        <a class="menuButton" href="javascript:void(0);">
             <div class="menuIcon" onclick="toggleMenu()">
                 placeholder
             </div>
             <div id="menuName"onclick="toggleMenu()">
                 Shawn Qiu
             </div>
-        </div>
+        </a>
 
-        <div id="content">
-            <div class="project">
-                <div class="project-heading">
-
-                </div>
-                <div class="project-subheading">
-                    
-                </div>
-                <div class="project-description">
-                    
-                </div>
-                <div class="concepts">
-
-                </div>
-                <div class="date">
-
-                </div>
+        <div id = "mainDisplay">     
+            <div id= "archiveContent">
+             <h1 id="archiveTitle">Archive</h1>
             </div>
         </div>
     </body>

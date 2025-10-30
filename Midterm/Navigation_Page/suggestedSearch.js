@@ -31,9 +31,9 @@ function suggestConcepts(){
 
     //if a concept is already selected, suggest nearby concepts
     if(lockMode >= 0){
-        document.getElementById("suggested-search").innerHTML = 
+        document.getElementById("suggestedSearch").innerHTML = 
         `<h3 class="red" id="rcLabel">Related concepts</h3>
-        <div id="related-concepts">
+        <div id="relatedConcepts">
           
         </div>`;
         let distances = [];
@@ -51,26 +51,26 @@ function suggestConcepts(){
             
         let relationsHTML = ``;
         for(let i = 1; i < random([5,7,6]); i++){
-            let relationHTML = `<button class="related-concept" id="r${i}" onclick="suggestedConceptFinder(id)">${distances[i].name}</button>`;
+            let relationHTML = `<button class="relatedConcept" id="r${i}" onclick="suggestedConceptFinder(id)">${distances[i].name}</button>`;
             relationsHTML = relationsHTML + "\n" + relationHTML;
         }
-        document.getElementById("related-concepts").innerHTML = relationsHTML;
+        document.getElementById("relatedConcepts").innerHTML = relationsHTML;
         
     }//else, suggest random concepts
     else{
-        document.getElementById("suggested-search").innerHTML = 
+        document.getElementById("suggestedSearch").innerHTML = 
         `<h3 id="ssLabel">Suggested search</h3>
-        <div id="suggested-concepts">
+        <div id="suggestedConcepts">
           
         </div>`;
         
         let suggestionsHTML = ``;
         conceptsRandom = shuffle(concepts);
         for(let i = 0; i < random([4,5,6]); i++){
-            let suggestionHTML = `<button class="suggested-concept" id="s${i}" onclick="suggestedConceptFinder(id)">${conceptsRandom[i].name}</button>`;
+            let suggestionHTML = `<button class="suggestedConcept" id="s${i}" onclick="suggestedConceptFinder(id)">${conceptsRandom[i].name}</button>`;
             suggestionsHTML = suggestionsHTML + "\n" + suggestionHTML;
         }
-        document.getElementById("suggested-concepts").innerHTML = suggestionsHTML;
+        document.getElementById("suggestedConcepts").innerHTML = suggestionsHTML;
     }
        
 }
@@ -103,11 +103,11 @@ function searchAssist(){
         document.getElementById("searchAssist").innerHTML = assistsHTML;
 
     //make elements appear/disappear to make matching search results fit on screen
-        if(document.getElementById("suggested-concepts")){
-            document.getElementById("suggested-concepts").style.display="none";
+        if(document.getElementById("suggestedConcepts")){
+            document.getElementById("suggestedConcepts").style.display="none";
             document.getElementById("ssLabel").style.display="none";
         }else{
-            document.getElementById("related-concepts").style.display="none";
+            document.getElementById("relatedConcepts").style.display="none";
             document.getElementById("rcLabel").style.display="none";
         }
         }else{
@@ -116,11 +116,11 @@ function searchAssist(){
     }
     else{
         document.getElementById("searchAssist").innerHTML = "";
-        if(document.getElementById("suggested-concepts")){
-            document.getElementById("suggested-concepts").style.display="flex";
+        if(document.getElementById("suggestedConcepts")){
+            document.getElementById("suggestedConcepts").style.display="flex";
             document.getElementById("ssLabel").style.display="flex";
         }else{
-            document.getElementById("related-concepts").style.display="flex";
+            document.getElementById("relatedConcepts").style.display="flex";
             document.getElementById("rcLabel").style.display="flex";
         }
        

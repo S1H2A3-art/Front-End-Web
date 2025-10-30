@@ -1,23 +1,19 @@
 /*local css information*/
 
-
-
-#information-panel{
+#informationPanel{
     z-index: 1;
     position:absolute;
-    left:3%;
-    bottom:0;
+    left:10%;
+    bottom:0%;
     width:45%;
-    height:60%;
+    height:50%;
     display: flex;
-    justify-content:center;
-    align-items:center;
     flex-wrap: nowrap;
     flex-direction: column;
     opacity: 80%;
 }
 
-#ConceptMap{
+#conceptMap{
     z-index: -1; 
 }
 
@@ -28,11 +24,10 @@
     display:none;
 }
 
-#search-panel{
+#searchPanel{
     display: flex;
     flex-direction: row;
     width:100%;
-    margin-left: 20%;
 }
 
 #searchBar{
@@ -65,7 +60,7 @@
    border-top: none;
    border-left: none;
    border-right: none;
-   background-color: rgba(238, 238, 238, 0.811);
+   background-color: rgba(255, 255, 255, 0.811);
 }
 
 #searchButton{
@@ -76,6 +71,7 @@
     border: 0.3rem solid red;
     color: red;
     background-color: white;
+    text-align: center;
 }
 
 #resetButton{
@@ -86,18 +82,18 @@
     background: linear-gradient(to right, red,rgb(255, 0, 70));
     color: white;
     border: 0cm;
+    text-align: center;
 }
 
-#suggested-search{
+#suggestedSearch{
     display: flex;
     justify-content: left;
     width: 100%;
     margin-top: 3rem;
     flex-direction: column;
-    margin-left: 20%;
 }
 
-.suggested-concept{
+.suggestedConcept{
     font-size: 2rem;
     margin-top: 1rem;
     margin-right: 1rem;
@@ -106,12 +102,12 @@
     border: 0.15rem solid rgb(132, 0, 35);
 }
 
-#suggested-concepts{
+#suggestedConcepts{
     display: flex;
     flex-wrap: wrap;
 }
 
-.related-concept{
+.relatedConcept{
     font-size: 2rem;
     margin-top: 1rem;
     margin-right: 1rem;
@@ -121,12 +117,12 @@
     opacity: 90%;   
 }
 
-#related-concepts{
+#relatedConcepts{
     display: flex;
     flex-wrap: wrap;
 }
 
-#projects-information{
+#projectsInformation{
     display: flex;
     flex-direction: column;
     z-index: 1; 
@@ -149,12 +145,12 @@
     right:0;
 }
 
-.image-container{
+.imageContainer{
     width: 40%;
     height: 50%;   
 }
 
-.project-information{
+.projectInformation{
     display: flex;
     padding: 1rem;
     border: 0.1rem solid rgba(0, 0, 0, 0.463);
@@ -171,24 +167,25 @@
     opacity: 90%;
 }
 
-.project-description{
+.projectDescription{
     display: flex;
     flex-direction: column;
     margin-left: 1rem;
     margin-top: 0;   
 }
 
-.project-title{
+.projectTitle{
     margin-top: 0;
-    color:black; 
+   
 }
 
-.category-title{
+
+.categoryTitle{
     margin-top: 0;
     font-size:1.5rem;
 }
 
-.date-title{
+.dateTitle{
     margin-top: 0;
     font-size:1.5rem;
     font-style: italic;  
@@ -200,7 +197,7 @@
 }
 
 @media screen and (max-width: 1780px) {
-    #search-panel{
+    #searchPanel{
         flex-direction: column;
     }
     #resetButton{
@@ -213,11 +210,17 @@
 }
 
 @media screen and (max-width: 1380px) {
-    #information-panel{
+    #informationPanel{
         align-self: start;
         left: 3%;
     }
 }
 
-
+#filter{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.118),rgba(255, 255, 255, 0.084),rgba(182, 182, 182, 0.671));;
+    color:rgba(255, 255, 255, 0);
+}
 

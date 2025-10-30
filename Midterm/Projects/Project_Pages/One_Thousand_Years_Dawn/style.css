@@ -1,0 +1,25 @@
+#essay p,#essay strong,#essay i,#essay .excerpt{
+    line-height: 2;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+}
+
+#citation p,#citation i,#citation strong{
+    line-height: 2;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+}
+
+#citation{
+    margin-left: 5rem;
+}
+
+#essay{
+    border-bottom: 0.1rem solid black;
+}
+
+.excerpt{
+    margin-left: 5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
