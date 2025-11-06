@@ -23,7 +23,7 @@
 }
 
 body{
-  background-image: radial-gradient(circle at center, rgb(255, 255, 255), rgb(255, 255, 255),rgb(255, 255, 255),rgb(255, 255, 255),rgb(255, 255, 255),rgba(213, 213, 213, 0.535));;
+  background-image: radial-gradient(circle at center, rgb(255, 255, 255), rgb(255, 255, 255),rgb(255, 255, 255),rgb(255, 255, 255),rgb(255, 255, 255),rgba(213, 213, 213, 0.535));
 }
 button:hover{
   opacity:100%;

@@ -5,9 +5,9 @@ let font2;
 let lockMode = -1;
 
 function preload(){
-  font1 = loadFont("../Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Regular 400.otf");
-  font2 = loadFont("../Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Bold 700.otf");
-  projectInformation = loadJSON("../Projects/projectInformation.json", processProjectsInformation);
+  font1 = loadFont("../../Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Regular 400.otf");
+  font2 = loadFont("../../Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Bold 700.otf");
+  projectInformation = loadJSON("../../Projects/projectInformation.json", processProjectsInformation);
 }
 
 //Determines the user's last input that caused an error
@@ -250,6 +250,5 @@ function draw() {
   
   
 }
-
 
 

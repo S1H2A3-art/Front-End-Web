@@ -7,10 +7,10 @@ function showProjects(){
             projectsHTML += `
             <div class="projectInformation">
                 <div class="imageContainer">
-                <img class="icons" src="../${project.mini_icon}">
+                <img class="icons" src="../../${project.mini_icon}">
                 </div>
                 <div class="projectDescription">
-                    <a class="projectTitle" href="../${project.page}?project=${encodeURIComponent(project.title)}"><p><strong>${project.title}</strong></p></a>
+                    <a class="projectTitle" href="../Project_Pages/${project.page}?project=${encodeURIComponent(project.title)}"><p><strong>${project.title}</strong></p></a>
                     <p class="categoryTitle"> ${project.category} </p>
                     <p class="dateTitle"> ${project.date} </p>
                 </div>
@@ -21,4 +21,3 @@ function showProjects(){
          
       
 }
-

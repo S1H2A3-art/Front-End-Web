@@ -5,6 +5,6 @@ function goBackOrHome() {
   if (referrer && referrer.startsWith(currentOrigin)) {
     history.back();
   } else {
-    window.location.href = "../../../Navigation_Page/Explorer.html"; 
+    window.location.href = "../../Navigation_Page/Explorer.html"; 
   }
 }

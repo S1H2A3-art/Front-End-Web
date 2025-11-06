@@ -1,7 +1,7 @@
  let pageFont;
  
  function preloadProject(){
-    projectInformation = loadJSON("../../projectInformation.json", processProjectsInformation);
+    projectInformation = loadJSON("../../../Projects/projectInformation.json", processProjectsInformation);
     pageFont = loadFont("../../../Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Regular 400.otf")
  }
 
@@ -11,8 +11,8 @@ function displayBasicInformation(){
    let currentProjectName = params.get("project");
    let currentProject = projects.find(project => project.title === currentProjectName);
    let projectContent = `
-      <div class="space">placeholder</div>
-      <div class="space">placeholder</div>`; 
+      <custom-spacing size = "5rem" direction = "vertical"></custom-spacing>
+   `; 
          
          projectContent += `
 
@@ -26,7 +26,7 @@ function displayBasicInformation(){
          `
          for(let concept of currentProject.concepts){
             projectContent += `
-               <a class = "conceptTag" href = "../../../Navigation_Page/Explorer.html?concept=${encodeURIComponent(concept)}">
+               <a class = "conceptTag" href = "../../Navigation_Page/Explorer.html?concept=${encodeURIComponent(concept)}">
                   ${concept}
                </a>   
             `
@@ -37,11 +37,9 @@ function displayBasicInformation(){
             
             </div> 
             
-            <!--<img src = "../${currentProject.mini_icon}" width="600*0.3" height="400*0.3" style="margin-left:2rem">-->
+            <!--<img src = "../../../${currentProject.mini_icon}" width="600*0.3" height="400*0.3" style="margin-left:2rem">-->
          
-            <div class = "space">
-               placeholder
-            </div>
+            <custom-spacing size = "2.5rem" direction = "vertical"></custom-spacing>
          </div> 
          `
 

@@ -508,17 +508,17 @@ let img4;
 let iteration = 0;
 
 function preload() {
-  img1 = loadImage("assets/Aristotle.png");
-  img2 = loadImage("assets/Octopus.png");
-  img3 = loadImage("assets/floor.png");
-  img4 = loadImage("assets/hand.png");
+  img1 = loadImage("Assets/Aristotle.png");
+  img2 = loadImage("Assets/Octopus.png");
+  img3 = loadImage("Assets/floor.png");
+  img4 = loadImage("Assets/hand.png");
   preloadProject();
 }
 
 let canvas;
 
 function setup() {
-displayBasicInformation();
+  displayBasicInformation();
   noLoop();
   canvas = createCanvas(2000, 800);
   canvas.parent(document.getElementById("projectContainer"));

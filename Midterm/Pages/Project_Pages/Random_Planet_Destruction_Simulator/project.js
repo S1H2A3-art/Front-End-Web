@@ -9,7 +9,7 @@ let particles = [];
 let font;
 
 function preload() {
-preloadProject();
+  preloadProject();
   img[0] = loadImage("../Solar_System/Data/Mercury.png");
   //Source: https://sketchfab.com/3d-models/mercury-realistic-8k-215f364627054d25ae03bcd72afda714
   img[1] = loadImage("../Solar_System/Data/Venus.png");
@@ -28,7 +28,6 @@ preloadProject();
   //Source: https://sketchfab.com/3d-models/realistic-earth-8k-899b7a8202ed48f0a0903c33cb5501b6
   img[8] = loadImage("../Solar_System/Data/Pluto.jpg");
   //Source: https://sketchfab.com/3d-models/pluto-a30ff3a5f4f3477d87fc534e0d1df7e2
-
   sunImg = loadImage("../Solar_System/Data/Sun.jpg");
   //Source: https://sketchfab.com/3d-models/ps1-style-low-poly-sun-9f2b6f87811242b8b6313b42667122cf
   img[9] = loadImage("../Solar_System/Data/Moon.jpg");

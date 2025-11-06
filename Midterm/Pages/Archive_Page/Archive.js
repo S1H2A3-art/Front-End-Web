@@ -1,5 +1,5 @@
  function preload(){
-    projectInformation = loadJSON("../Projects/projectInformation.json", processProjectsInformation);
+    projectInformation = loadJSON("../../Projects/projectInformation.json", processProjectsInformation);
  }
 
  function setup(){
@@ -13,7 +13,7 @@
 
          <div class = "project">
             <div class = "projectInformation">
-               <a href = "../${project.page}?project=${encodeURIComponent(project.title)}"><h1>${project.title} - ${project.secondary_title}</h1></a>
+               <a href = "../Project_Pages/${project.page}?project=${encodeURIComponent(project.title)}"><h1>${project.title} - ${project.secondary_title}</h1></a>
                <p class = "projectDate"><i>${project.date}</i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp${project.category}</p>
                <p>${project.description}</p>         
                   
@@ -32,7 +32,7 @@
             
             </div> 
             
-            <!--<img src = "../${project.mini_icon}" width="600*0.3" height="400*0.3" style="margin-left:2rem">-->
+            <!--<img src = "../../${project.mini_icon}" width="600*0.3" height="400*0.3" style="margin-left:2rem">-->
          
             <div class = "space">
                placeholder
