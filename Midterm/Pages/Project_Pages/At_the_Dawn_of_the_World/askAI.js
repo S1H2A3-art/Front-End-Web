@@ -1,10 +1,10 @@
-let gptApiKey = "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";
+let gptApiKey = prompt("Enter chatGPT API key:");
 
-let geminiApiKey = "AIzaSyAgaPycC-I7ySwsI8y8zZwLQSfLUqCNQ9E";
+let geminiApiKey = prompt("Enter gemini API key:");
 
-let claudeApiKey = "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";
+let claudeApiKey = prompt("Enter claude API key:");
 
-let grokApiKey = "xai-pJ0ljxcr6EL7Flvho20x8v1c7SEREpi6PDrhYnLujfFaKWB2vAHJZs65wEtkiCHxkr49TJSohRiYLhXe";
+let grokApiKey = prompt("Enter Grok gemini API key:");
 
 const aiResponseCache = new Map();
 const judgeCache = new Map();
@@ -95,7 +95,7 @@ async function askAI(question){
   const data2 = await result2.json();
   const data3 = await result3.json();
    
-  
+  console.log(data1);
   responses.push(data1.output[0].content[0].text);
   responses.push(data2.candidates[0].content.parts[0].text);
   responses.push(data3.content[0].text);
