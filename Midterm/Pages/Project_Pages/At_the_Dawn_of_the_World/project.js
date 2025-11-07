@@ -4,6 +4,7 @@ let inputField;
 let background1;
 let background2;
 let background3;
+let ambientLoopStarted = false;
 
 let creatorBackground;
 let creatorImage = [];
@@ -204,12 +205,15 @@ function draw() {
   textAlign(CENTER,CENTER);
   textSize(100);
   //console.log(frameCount);
-  if(frameCount === 2){
+  if(!ambientLoopStarted && frameCount >= 2){
     startIntroSpeech();
-    background1.loop(); 
-    background2.loop();
-    background3.loop(); 
-    music.loop();
+    if(background1) background1.loop(); 
+    if(background2) background2.loop();
+    if(background3) background3.loop(); 
+    if(music && !music.isPlaying()){
+      music.loop();
+    }
+    ambientLoopStarted = true;
   }
   
   background(0);
