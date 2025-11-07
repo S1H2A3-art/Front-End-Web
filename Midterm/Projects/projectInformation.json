@@ -266,6 +266,17 @@
         "mini_icon":"",
         "large_icon":"",
         "page":"One_Thousand_Years_Dawn/index.html"
+    },
+    {
+        "title": "At the Dawn of the World",
+        "secondary_title": "Introduction to Machine Learning in the Arts Week 9",
+        "category":"javascript",
+        "description":"Before the first sound, before the first name, there was a shimmer — a breath of light trembling at the edge of nothing. The dark was not banished; it was transformed, made gentle by illumination that asked nothing and promised everything.",
+        "date":"November 6, 2025",
+        "concepts":["creation","judgement","meaning","freedom","God"],
+        "mini_icon":"",
+        "large_icon":"",
+        "page":"At_the_Dawn_of_the_World/index.html"
     }
     
 ]

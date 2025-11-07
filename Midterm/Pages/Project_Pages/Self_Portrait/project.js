@@ -42,11 +42,13 @@ function drawTri(xmin, xmax, ymin, ymax) {
     random(ymin/800*minLength, ymax/800*minLength)
   );
 }
-
+async function preload(){
+  await displayBasicInformation();
+}
 let canvas;
-async function setup() {
+function setup() {
 canvas = createCanvas(2000, 1400);
-await displayBasicInformation();
+
 
   noLoop();
   

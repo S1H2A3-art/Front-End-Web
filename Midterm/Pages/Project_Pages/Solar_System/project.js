@@ -6,8 +6,9 @@ let sunImg;
 let moonImg;
 let ringImg;
 
-function preload() {
-
+async function preload() {
+  showMode = "key";
+  await displayBasicInformation();
   img[0] = loadImage("Data/Mercury.png");
   //Source: https://sketchfab.com/3d-models/mercury-realistic-8k-215f364627054d25ae03bcd72afda714
   img[1] = loadImage("Data/Venus.png");
@@ -199,10 +200,10 @@ planets[9] = new planet(
 //time controls how long the explosion effect lasts
 let time = 0;
 let canvas;
-async function setup() {
-  showMode = "key";
+function setup() {
+  
   canvas = createCanvas(2000, 1400, WEBGL);
-  await displayBasicInformation();
+
   
   canvas.parent(document.getElementById("projectContainer"));
   angleMode(DEGREES);

@@ -164,3 +164,8 @@ a{
     margin-left: auto;
     margin-right: auto;
 }
+
+#projectContainer{
+    display: flex;
+    flex-direction: column;
+}

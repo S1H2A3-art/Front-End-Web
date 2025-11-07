@@ -507,7 +507,8 @@ let img3;
 let img4;
 let iteration = 0;
 
-function preload() {
+async function preload() {     
+  await displayBasicInformation();
   img1 = loadImage("Assets/Aristotle.png");
   img2 = loadImage("Assets/Octopus.png");
   img3 = loadImage("Assets/floor.png");
@@ -517,8 +518,7 @@ function preload() {
 
 let canvas;
 
-async function setup() {
-  await displayBasicInformation();
+function setup() {
   noLoop();
   canvas = createCanvas(2000, 800);
   canvas.parent(document.getElementById("projectContainer"));

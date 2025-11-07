@@ -77,6 +77,7 @@ function showHint(size) {
             instructions.innerHTML = desiredInstructionsHTML;
         }
         projectContainer.style.pointerEvents = "auto";
+        if(showMode == "mouse"){
         push();
         textFont(pageFont);
         textAlign(CENTER, CENTER);
@@ -86,5 +87,6 @@ function showHint(size) {
         textSize(size);
         text("Press to start/pause the code", width / 2, height / 2);
         pop();
+        }
     }
 }
