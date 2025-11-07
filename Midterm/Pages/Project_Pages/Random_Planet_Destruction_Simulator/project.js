@@ -9,7 +9,6 @@ let particles = [];
 let font;
 
 function preload() {
-  preloadProject();
   img[0] = loadImage("../Solar_System/Data/Mercury.png");
   //Source: https://sketchfab.com/3d-models/mercury-realistic-8k-215f364627054d25ae03bcd72afda714
   img[1] = loadImage("../Solar_System/Data/Venus.png");
@@ -291,9 +290,11 @@ planets[9] = new planet(
 //time controls how long the explosion effect lasts
 let time = 0;
 let canvas;
-function setup() {
+async function setup() {
   showMode = "key";
-  displayBasicInformation();
+  canvas = createCanvas(2000, 1400, WEBGL);
+  await displayBasicInformation();
+
   canvas = createCanvas(2000, 1400, WEBGL);
   canvas.parent(document.getElementById("projectContainer"));
   angleMode(DEGREES);

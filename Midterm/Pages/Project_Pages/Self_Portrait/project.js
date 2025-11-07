@@ -43,12 +43,10 @@ function drawTri(xmin, xmax, ymin, ymax) {
   );
 }
 
-function preload(){
-    preloadProject();
-}
 let canvas;
-function setup() {
-displayBasicInformation();
+async function setup() {
+
+await displayBasicInformation();
 
   noLoop();
   canvas = createCanvas(2000, 1400);

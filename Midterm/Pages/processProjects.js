@@ -13,6 +13,7 @@ let relatedness = [];
 let maxRelation = 0;
 
 function processProjectsInformation(results){
+
   //set up projects array and concepts array
   for(let project of results){
     if(project && project.concepts){

@@ -1,15 +1,16 @@
 
-let cardNumber = ["A",2,3,4,5,6,7,8,9,0,"J","Q","K"];
-let cardSuit = ["♠","♥","♣","♦"];
+
 
 class CardDiv extends HTMLElement{
+    static cardNumber = ["A",2,3,4,5,6,7,8,9,0,"J","Q","K"];
+    static cardSuit = ["♠","♥","♣","♦"];
     constructor(rank, suit){
         super();
         this.classList.add("card-div");
 
-        this.rank = cardNumber[rank - 1];
+        this.rank = CardDiv.cardNumber[rank - 1];
 
-        this.suitSymbol = cardSuit[suit];
+        this.suitSymbol = CardDiv.cardSuit[suit];
 
         this.innerHTML = `${this.suitSymbol}${this.rank}`;
 

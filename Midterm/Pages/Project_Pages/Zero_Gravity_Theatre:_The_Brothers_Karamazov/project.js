@@ -1,6 +1,4 @@
-function preload(){
-    preloadProject();
-}
-function setup(){
-    displayBasicInformation();
+
+async function setup(){
+    await displayBasicInformation();
 }

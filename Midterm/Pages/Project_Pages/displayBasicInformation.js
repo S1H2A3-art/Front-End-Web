@@ -1,15 +1,18 @@
  let pageFont;
- 
- function preloadProject(){
-    projectInformation = loadJSON("../../../Projects/projectInformation.json", processProjectsInformation);
-    pageFont = loadFont("../../../Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Regular 400.otf")
- }
 
-function displayBasicInformation(){
+async function preloadProjects(){
+   projectInformation = fetch("../../../Projects/projectInformation.json").then(response => {return response.json();}).then(data => {processProjectsInformation(data)});
+   pageFont = loadFont("../../../Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Regular 400.otf")
+   await projectInformation;
+}
 
+async function displayBasicInformation(){
+   await preloadProjects();
    let params = new URLSearchParams(window.location.search);
    let currentProjectName = params.get("project");
+   
    let currentProject = projects.find(project => project.title === currentProjectName);
+
    let projectContent = `
       <custom-spacing size = "5rem" direction = "vertical"></custom-spacing>
    `; 
@@ -45,4 +48,5 @@ function displayBasicInformation(){
 
 
     pageBody.innerHTML = projectContent + pageBody.innerHTML;
+    
 }

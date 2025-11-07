@@ -512,13 +512,13 @@ function preload() {
   img2 = loadImage("Assets/Octopus.png");
   img3 = loadImage("Assets/floor.png");
   img4 = loadImage("Assets/hand.png");
-  preloadProject();
+
 }
 
 let canvas;
 
-function setup() {
-  displayBasicInformation();
+async function setup() {
+  await displayBasicInformation();
   noLoop();
   canvas = createCanvas(2000, 800);
   canvas.parent(document.getElementById("projectContainer"));
