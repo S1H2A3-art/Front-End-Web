@@ -95,7 +95,7 @@ async function askAI(question){
   const data2 = await result2.json();
   const data3 = await result3.json();
    
-  console.log(data1);
+  //console.log(data1);
   responses.push(data1.output[0].content[0].text);
   responses.push(data2.candidates[0].content.parts[0].text);
   responses.push(data3.content[0].text);
