@@ -45,11 +45,11 @@ function drawTri(xmin, xmax, ymin, ymax) {
 
 let canvas;
 async function setup() {
-
+canvas = createCanvas(2000, 1400);
 await displayBasicInformation();
 
   noLoop();
-  canvas = createCanvas(2000, 1400);
+  
   canvas.parent(document.getElementById("projectContainer"));
   if(width > height){
  minLength = height;
