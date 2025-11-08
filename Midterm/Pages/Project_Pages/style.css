@@ -159,7 +159,7 @@ a{
     color:rgba(255, 255, 255, 0);
 }
 
-#pageBody img{
+#pageBody img, #pageBody video{
     display: block;
     margin-left: auto;
     margin-right: auto;
