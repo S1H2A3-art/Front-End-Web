@@ -209,6 +209,7 @@ async function setup() {
   }
   
   textSize(20);
+  noLoop();
   
 }
 function draw() {
