@@ -71,10 +71,20 @@
 
 .imageGallery{
     display: flex;
+    flex-direction: column;
 }
 
-.video{
+.imageRow{
+    display: flex;
+    flex-direction: row;
+    
 
+}
+
+.textAndImage{
+    align-items: center;
+    display: flex;
+   
 }
 
 
@@ -91,7 +101,7 @@ h1{
 h2{
 font-family:"manrope";
   font-weight: 500;
-  font-size:3rem;
+  font-size:4rem;
   background-image: radial-gradient(ellipse at center, rgb(100, 100, 100),rgb(23, 23, 23));
     background-clip: text;
     -webkit-text-fill-color: transparent; 
@@ -99,7 +109,7 @@ font-family:"manrope";
 
 h3{
 font-family:"manrope";
-  font-size:2rem;
+  font-size:3rem;
   font-weight: bold;
   background-image: radial-gradient(ellipse at center, rgb(100, 100, 100),rgb(23, 23, 23));
     background-clip: text;
@@ -114,6 +124,10 @@ p,li{
 
 a{
     text-decoration: none;
+}
+
+p a,li a{
+    text-decoration: underline;
 }
 
 .customParagraph,.customParagraph i{
@@ -159,7 +173,7 @@ a{
     color:rgba(255, 255, 255, 0);
 }
 
-#pageBody img, #pageBody video{
+#pageBody img, #pageBody video,#pageBody .imageGallery{
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -168,4 +182,17 @@ a{
 #projectContainer{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+code{
+    font-family: 'Courier New', Courier, monospace;
+    font-size:2rem;
+    
+}
+pre{
+    overflow: auto;
+    max-height: 40rem;
+    border: 0.2rem dotted red;
 }

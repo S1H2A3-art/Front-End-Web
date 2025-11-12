@@ -2,33 +2,43 @@ class ControlInstruction extends HTMLElement{
     constructor(){
         super();
         this.classList.add("controlInstruction");
-        this.instructions = this.getAttribute("instructions").split(",");
-        for(let i = 0; i < this.instructions.length; i++){
-            this.instructions[i] = this.instructions[i].split(":");
-        }
-        this.innerHTML = `
-            <h3>CONTROLS</h3> 
-            <div id = instructions>
-            </div>
-        `;
 
-        for(let instruction of this.instructions){
-            const span = document.createElement("span");
-             span.innerHTML = `
-             <p style = "display:inline; font-weight:500">
-                ${instruction[0]}: 
-            </p>
-            <p style = "display:inline; color:#666666; ">
-                &ensp;${instruction[1]}
-                &emsp;&emsp;
-            </p>
-             `
+        if(this.getAttribute("instructions") !== undefined){
+
+            this.innerHTML = `
+                <h3>CONTROLS</h3> 
+                <div id = "instructions">
+                </div>
+            `;
             
-            this.querySelector("#instructions").appendChild(span);
-        }
+            if(this.getAttribute("instructions") != "" && this.getAttribute("instructions") !== null){
+                this.instructions = this.getAttribute("instructions").split(",");
 
-        
+                for(let i = 0; i < this.instructions.length; i++){
+                    this.instructions[i] = this.instructions[i].split(":");
+                }
+                
+
+                for(let instruction of this.instructions){
+
+                    const span = document.createElement("span");
+                    span.innerHTML = `
+                    <p style = "display:inline; font-weight:500">
+                        ${instruction[0]}: 
+                    </p>
+                    <p style = "display:inline; color:#666666; ">
+                        &ensp;${instruction[1]}
+                        &emsp;&emsp;
+                    </p>
+                    `
+                    
+                    this.querySelector("#instructions").appendChild(span);
+
+                }
+            }
+        }
     }
+  
 }
 
 customElements.define("control-instruction",ControlInstruction);
@@ -93,3 +103,43 @@ class CustomCitation extends HTMLElement{
 }
 
 customElements.define("custom-citation", CustomCitation);
+
+class ImageGallery extends HTMLElement{
+     constructor(){
+        super();
+        this.classList.add("imageGallery");
+        this.column = this.getAttribute("column");
+        this.row = this.getAttribute("row");
+        this.images = this.innerText.split(',');
+        this.innerHTML = "";
+        for(let i = 0; i < this.row; i++){
+            let imageRows = `<div class="imageRow">`;
+            for(let j = 0; j < this.column; j++){
+                imageRows += `<img width="${100/this.column}%" style="margin:${(100/this.column-5)/100}%; " src = "${this.images[j+i*this.column]}">`
+            }
+            imageRows += `</div>`;
+            this.innerHTML += imageRows;
+           
+        }
+    }
+}
+
+customElements.define("image-gallery", ImageGallery);
+
+class TextAndImage extends HTMLElement{
+     constructor(){
+        super();
+        this.classList.add("textAndImage");
+        this.content = this.innerText.split(",,");
+        this.innerHTML="";
+        if(this.content[0].startsWith("page_asset")||this.content[0].startsWith("Assets")){
+            this.innerHTML += `<div style="width:50%" ><img width="100%" style="margin-right:1rem"src="${this.content[0]}"></div>`;
+            this.innerHTML += `<div style="width:50%"><p style="margin-left:2rem">${this.content[1]}</p></div>`
+        }else{
+            this.innerHTML += `<div style="width:50%"><p style="margin-right:2rem">${this.content[0]}</p></div>`
+            this.innerHTML += `<div style="width:50%"><img width="100%" style="margin-left:1rem" src="${this.content[1]}"></div>`;
+        }
+    }
+}
+
+customElements.define("text-and-image", TextAndImage);

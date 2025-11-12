@@ -10,7 +10,8 @@ async function displayBasicInformation(){
    await preloadProjects();
    let params = new URLSearchParams(window.location.search);
    let currentProjectName = params.get("project");
-   
+   console.log(params);
+
    let currentProject = projects.find(project => project.title === currentProjectName);
 
    let projectContent = `

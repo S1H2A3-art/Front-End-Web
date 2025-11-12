@@ -189,7 +189,7 @@
         "concepts":["consciousness","intelligence","vessal","life","internalization"],
         "mini_icon":"Projects/Project_Icons/The Guidebook for the Conscious Book.png",
         "large_icon":"",
-        "page":"Projects/The_Guidebook_for_the_Conscious_Book/index.html"
+        "page":"The_Guidebook_for_the_Conscious_Book/index.html"
     },
     {
         "title": "Zero Gravity Theatre: The Brothers Karamazov",
@@ -231,7 +231,7 @@
         "description":"This project intends to recreate my first creative project in p5.js(Self Portrait) using the faceMesh model.",
         "date":"October 10, 2025",
         "concepts":["randomness","mask","identity","externalization"],
-        "mini_icon":"",
+        "mini_icon":"Projects/Project_Icons/Self Portrait 2.0.png",
         "large_icon":"",
         "page":"Self_Portrait_2.0/index.html"
     },
@@ -242,7 +242,7 @@
         "description":"Create a program that automatically sends a blessing to a person when it detects that that person is coughing.",
         "date":"October 17, 2025",
         "concepts":["bless","sickness","automation","God","interaction"],
-        "mini_icon":"",
+        "mini_icon":"Projects/Project_Icons/Automatic Blessing Apparatus.png",
         "large_icon":"",
         "page":"Automatic_Blessing_Apparatus/index.html"
     },
@@ -253,7 +253,7 @@
         "description":"The intention of this project is to use the ml5 neural network for training the AI of a simple 2D badminton game using neuroevolution. The original version of the game can be accessed via: Aristotle vs the Giant Octopus.",
         "date":"October 24, 2025",
         "concepts":["Aristotle","consciousness","cycle","ocean creatures","game"],
-        "mini_icon":"",
+        "mini_icon":"Projects/Project_Icons/Aristotle vs Giant Robot Octopuses.png",
         "large_icon":"",
         "page":"Aristotle_vs_Giant_Robot_Octopuses/index.html"
     }, {
@@ -263,7 +263,7 @@
         "description":"A man stands firmly on a featureless terrain of dunes that stretches infinitely behind him into the horizon. In front of him rise and fall the tides of the eternally blue sea, veiled by a thin glistening curtain of the reflection of the dawning Sun, which artlessly pronounces its awakening across the new world. ",
         "date":"March 23, 2025",
         "concepts":["history","judgement","meaning","automation","alienation"],
-        "mini_icon":"",
+        "mini_icon":"Projects/Project_Icons/One Thousand Years Dawn.png",
         "large_icon":"",
         "page":"One_Thousand_Years_Dawn/index.html"
     },
@@ -274,7 +274,7 @@
         "description":"Before the first sound, before the first name, there was a shimmer — a breath of light trembling at the edge of nothing. The dark was not banished; it was transformed, made gentle by illumination that asked nothing and promised everything.",
         "date":"November 6, 2025",
         "concepts":["creation","judgement","meaning","freedom","God"],
-        "mini_icon":"",
+        "mini_icon":"Projects/Project_Icons/At the Dawn of the World.png",
         "large_icon":"",
         "page":"At_the_Dawn_of_the_World/index.html"
     }

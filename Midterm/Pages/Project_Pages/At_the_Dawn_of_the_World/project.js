@@ -20,7 +20,7 @@ let freedomImage = [];
 
 let music;
 async function preload() {
-  showMode = "key";
+  showMode = "*";
   await displayBasicInformation();
   creatorImage.push(loadImage("Assets/creator_1.jpeg"));
   creatorImage.push(loadImage("Assets/creator_2.jpeg"));
@@ -337,7 +337,15 @@ function draw() {
     pop();
   }
   //if(audio)console.log(currentSpeaking + "    " + audio.isPlaying() + "    " + judgeSpeaking);
-  showHint(40);
+  showHint();
+
+  //no pause
+  if(frameCount >= 2)
+  loop();
+
+  if(document.getElementById("defaultInstruction"))
+  document.getElementById("defaultInstruction").innerHTML = `START PLAY(Cannot pause):`;
+  
 }
 
 function startSpeechPlayback(queue) {

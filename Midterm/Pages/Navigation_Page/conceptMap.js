@@ -77,7 +77,7 @@ function resetCamera(){
 function applyForces() {
   let k = 0.01; // spring constant
   let repel = 4000; // repulsion constant
-  let damping = 0.9;
+  let damping = 0.5;
 
   for (let i = 0; i < conceptsNum; i++) {
     for (let j = i + 1; j < conceptsNum; j++) {
@@ -133,7 +133,7 @@ function applyForces() {
 }
 
 function setup() {
-  console.log(projects)
+  //console.log(projects)
   createCanvas(windowWidth, windowHeight, WEBGL);
   textFont(font1); 
 
@@ -147,6 +147,7 @@ function setup() {
 
   let params = new URLSearchParams(window.location.search);
   let concept = params.get("concept");
+  
   if (concept) {
     document.getElementById("searchConcept").value = concept;
     conceptFinder();
