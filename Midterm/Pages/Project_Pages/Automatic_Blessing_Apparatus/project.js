@@ -21,8 +21,8 @@ let predictedSound = "";
 
 let modelJson = "https://teachablemachine.withgoogle.com/models/jfPNa-YWG/";
 
-async function preload() {
-  await displayBasicInformation();
+function preload() {
+  displayBasicInformation();
   music = loadSound("Assets/music.mp3");
   img1 = loadImage("Assets/statue.jpg");
   images.push(loadImage("Assets/cool_jesus.jpg"));

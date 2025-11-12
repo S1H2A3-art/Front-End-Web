@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Concept Embeddings – 3D Preview</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js"></script>
+  </head>
+  <body>
+    <script>
+      let embeddings = [];
+      let conceptNames = [];
+      let screenPositions = [];
+      let glRenderer;
+      let hoveredIndex = -1;
+      let font;
+      function preload() {
+        embeddings = loadJSON("embeddings.json");
+        font = loadFont("../Assets/Manrope_Font_Family_(Fontmirror)/Manrope3 Regular 400.otf")
+      }
+
+      function setup() {
+        createCanvas(800, 600, WEBGL);
+        noStroke();
+        glRenderer = this._renderer;
+        textFont(font);
+
+        // convert object -> arrays
+        conceptNames = Object.keys(embeddings);
+        embeddings = conceptNames.map((name) => {
+          const v = embeddings[name];
+          return {
+            name,
+            x: v[0],
+            y: v[1],
+            z: v[2] || 0,
+          };
+        });
+
+        // normalize positions for a nicer view
+        const maxMag = Math.max(
+          ...embeddings.map((v) => Math.sqrt(v.x * v.x + v.y * v.y + v.z * v.z))
+        );
+        embeddings.forEach((v) => {
+          v.x = (v.x / maxMag) * 250;
+          v.y = (v.y / maxMag) * 250;
+          v.z = (v.z / maxMag) * 250;
+        });
+      }
+
+      function draw() {
+        background(10);
+        orbitControl();
+
+        // axes
+        stroke(255, 60);
+        line(0, 0, 0, 260, 0, 0);
+        line(0, 0, 0, 0, 260, 0);
+        line(0, 0, 0, 0, 0, 260);
+        noStroke();
+
+        embeddings.forEach((v, idx) => {
+          push();
+          translate(v.x, v.y, v.z);
+          if (idx === hoveredIndex) {
+            fill(255, 200, 100);
+            sphere(12);
+          } else {
+            fill(150 + (idx * 35) % 105, 180, 255, 200);
+            sphere(8);
+          }
+          pop();
+        });
+
+        screenPositions = embeddings.map((v) => worldToScreen(v.x, v.y, v.z));
+        drawLabels();
+      }
+
+      function drawLabels() {
+        if (!screenPositions.length) return;
+        embeddings.forEach((v, idx) => {
+          push();
+          translate(v.x, v.y, v.z);
+          rotateY(-rotationY);
+          rotateX(-rotationX);
+          fill(0, 200);
+          rectMode(CENTER);
+          const label = embeddings[idx].name;
+          const w = textWidth(label) + 18;
+          const h = 20;
+          translate(0, -18, 0);
+          rect(0, 0, w, h, 4);
+          fill(255);
+          textAlign(CENTER, CENTER);
+          textSize(12);
+          text(label, 0, 0);
+          rectMode(CORNER);
+          pop();
+        });
+      }
+      function worldToScreen(x, y, z) {
+        const renderer = glRenderer;
+        if (!renderer) return { valid: false };
+
+        const view = renderer.uMVMatrix.copy();
+        const projection = renderer.uPMatrix.copy();
+        const mvp = projection.copy();
+        mvp.mult(view);
+
+        const multVec = (mat, vec) => {
+          const res = [];
+          for (let i = 0; i < 4; i++) {
+            res[i] =
+              mat.mat4[i * 4 + 0] * vec[0] +
+              mat.mat4[i * 4 + 1] * vec[1] +
+              mat.mat4[i * 4 + 2] * vec[2] +
+              mat.mat4[i * 4 + 3] * vec[3];
+          }
+          return res;
+        };
+
+        const result = multVec(mvp, [x, y, z, 1]);
+        const w = result[3] || 1;
+
+        const nx = result[0] / w;
+        const ny = result[1] / w;
+        const nz = result[2] / w;
+
+        if (nz > 1 || nz < -1) {
+          return { valid: false };
+        }
+
+        return {
+          x: (nx + 1) * width * 0.5,
+          y: (-ny + 1) * height * 0.5,
+          valid: true,
+        };
+      }
+    </script>
+  </body>
+</html>

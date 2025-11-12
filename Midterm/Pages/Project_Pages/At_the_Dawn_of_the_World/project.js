@@ -19,9 +19,9 @@ let freedomBackground;
 let freedomImage = [];
 
 let music;
-async function preload() {
+function preload() {
   showMode = "*";
-  await displayBasicInformation();
+  displayBasicInformation();
   creatorImage.push(loadImage("Assets/creator_1.jpeg"));
   creatorImage.push(loadImage("Assets/creator_2.jpeg"));
   creatorImage.push(loadImage("Assets/creator_3.jpeg"));

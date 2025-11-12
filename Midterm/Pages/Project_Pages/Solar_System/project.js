@@ -6,9 +6,9 @@ let sunImg;
 let moonImg;
 let ringImg;
 
-async function preload() {
+function preload() {
   showMode = "key";
-  await displayBasicInformation();
+  displayBasicInformation();
   img[0] = loadImage("Data/Mercury.png");
   //Source: https://sketchfab.com/3d-models/mercury-realistic-8k-215f364627054d25ae03bcd72afda714
   img[1] = loadImage("Data/Venus.png");

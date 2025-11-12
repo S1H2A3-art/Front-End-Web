@@ -29,8 +29,8 @@ let targetInverseThreshold = 0;
 let targetLens = 0;
 let targetOpacity = 0;
 
-async function preload() {
-    await displayBasicInformation();
+function preload() {
+    displayBasicInformation();
   classifier = ml5.imageClassifier(link + "model.json");
 }
 let canvas;

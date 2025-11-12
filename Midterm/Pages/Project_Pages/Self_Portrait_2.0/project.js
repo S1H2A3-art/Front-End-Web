@@ -7,8 +7,8 @@ let hand;
 let video;
 let count = 0;
 
-async function preload(){
-  await displayBasicInformation();
+function preload(){
+  displayBasicInformation();
   faceMesh = ml5.faceMesh();
   handPose = ml5.handPose();
 }

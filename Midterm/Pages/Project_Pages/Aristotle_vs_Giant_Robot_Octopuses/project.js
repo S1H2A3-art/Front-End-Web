@@ -507,8 +507,8 @@ let img3;
 let img4;
 let iteration = 0;
 
-async function preload() {     
-  await displayBasicInformation();
+function preload() {     
+  displayBasicInformation();
   img1 = loadImage("Assets/Aristotle.png");
   img2 = loadImage("Assets/Octopus.png");
   img3 = loadImage("Assets/floor.png");
@@ -518,8 +518,9 @@ async function preload() {
 
 let canvas;
 
-function setup() {
-  noLoop();
+function setup(){
+
+  
   canvas = createCanvas(2000, 800);
   canvas.parent(document.getElementById("projectContainer"));
 
@@ -535,9 +536,11 @@ function setup() {
   img1.resize(300, 360);
   img2.resize(480, 540);
   img3.resize(width, 160);
+  
+  noLoop();
 }
-
 function draw() {
+
   background(0);
   background1();
     window.addEventListener("keydown", function(e) {

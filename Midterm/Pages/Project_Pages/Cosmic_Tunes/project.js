@@ -24,37 +24,54 @@ function initMonitorSketch() {
   monitorSketch = new p5(s);
 }
 
-async function preload() {
+function preload() {
     showMode = "key";
-    await displayBasicInformation();
-    initMonitorSketch();
+    displayBasicInformation();
+    
   for (let CelestialBody of celestialBodies) {
     CelestialBody.img = loadImage(CelestialBody.img);
   }
 }
 let canvas2;
-function setup() {
-  canvas2 = createCanvas(2000, 1000, WEBGL);
-  canvas2.parent(document.getElementById("projectContainer"));
+let canvasInitialized = false;
 
-  //set up buttons
+function setupButtons(parentEl) {
   for (let i = 0; i < celestialBodies.length; i++) {
-    if (celestialBodies[i].name != "sun") {
-      buttons[i] = createButton(celestialBodies[i].name, str(i));
-    } else {
-      buttons[i] = createButton("solar system", str(i));
-    }
-    buttons[i].parent(document.getElementById("controls"));
+    const label = celestialBodies[i].name !== "sun" ? celestialBodies[i].name : "solar system";
+    buttons[i] = createButton(label, str(i));
+    buttons[i].parent(parentEl);
     buttons[i].mousePressed(buttonPressed);
     buttons[i].style("color", "steelblue");
     buttons[i].style("border", "0.1rem solid steelblue");
     buttons[i].style("background-color", "white");
     buttons[i].style("padding", "0.3em");
-     buttons[i].style("font-size", "2rem");
-     buttons[i].style("margin", "0.5em");
-     buttons[i].style("width", "12rem");
+    buttons[i].style("font-size", "2rem");
+    buttons[i].style("margin", "0.5em");
+    buttons[i].style("width", "12rem");
   }
+}
+
+function waitForProjectLayout() {
+  if (canvasInitialized) {
+    return;
+  }
+  const container = document.getElementById("projectContainer");
+  const controls = document.getElementById("controls");
+  if (!container || !controls) {
+    requestAnimationFrame(waitForProjectLayout);
+    return;
+  }
+
+  canvas2 = createCanvas(2000, 1000, WEBGL);
+  canvas2.parent(container);
+  setupButtons(controls);
   noLoop();
+  canvasInitialized = true;
+}
+
+function setup() {
+  waitForProjectLayout();
+  initMonitorSketch();
 }
 
 let cameraAngle = 0;

@@ -8,9 +8,9 @@ let ringImg;
 let particles = [];
 let font;
 
-async function preload() {
+function preload() {
   showMode = "key";
-  await displayBasicInformation();
+  displayBasicInformation();
   img[0] = loadImage("../Solar_System/Data/Mercury.png");
   //Source: https://sketchfab.com/3d-models/mercury-realistic-8k-215f364627054d25ae03bcd72afda714
   img[1] = loadImage("../Solar_System/Data/Venus.png");

@@ -187,8 +187,8 @@ let pred = false;
 let index = 0;
 //variable used to check each predator in the arry in a while loop
 let index2 = 0;
-async function preload(){
-    await displayBasicInformation();
+function preload(){
+    displayBasicInformation();
 }
 let canvas;
 function setup() {

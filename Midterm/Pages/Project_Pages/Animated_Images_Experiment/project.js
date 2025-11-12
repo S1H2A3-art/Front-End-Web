@@ -62,8 +62,8 @@ function comeBack(b, strength = 0.01, frame = 0) {
 
 let img1;
 //select the image to apply the effects to
-async function preload() {
-    await displayBasicInformation();
+function preload() {
+    displayBasicInformation();
   img1 = loadImage("Assets/img1.gif");
 }
 

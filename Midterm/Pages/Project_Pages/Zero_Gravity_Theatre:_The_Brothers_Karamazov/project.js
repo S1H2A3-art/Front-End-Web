@@ -1,6 +1,6 @@
 
-async function preload(){
-    await displayBasicInformation();
+function preload(){
+    displayBasicInformation();
 }
 
 function setup(){

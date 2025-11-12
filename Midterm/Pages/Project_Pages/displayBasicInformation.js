@@ -15,7 +15,7 @@ async function displayBasicInformation(){
    let currentProject = projects.find(project => project.title === currentProjectName);
 
    let projectContent = `
-      <custom-spacing size = "5rem" direction = "vertical"></custom-spacing>
+      <custom-spacing size = "5rem"></custom-spacing>
    `; 
          
          projectContent += `
@@ -43,7 +43,7 @@ async function displayBasicInformation(){
             
             <!--<img src = "../../../${currentProject.mini_icon}" width="600*0.3" height="400*0.3" style="margin-left:2rem">-->
          
-            <custom-spacing size = "2.5rem" direction = "vertical"></custom-spacing>
+            <custom-spacing size = "2.5rem"></custom-spacing>
          </div> 
          `
 

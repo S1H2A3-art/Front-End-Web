@@ -16,9 +16,9 @@ let beads;
 //space in between each bead
 let size = 10;
 
-async function preload() {
+function preload() {
     showMode = "key";
-  await displayBasicInformation();
+  displayBasicInformation();
   bodySegmentation = ml5.bodySegmentation("SelfieSegmentation", options);
 }
 function keyPressed(){

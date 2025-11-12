@@ -65,10 +65,6 @@
     display: flex;
 }
 
-.image{
-
-}
-
 .imageGallery{
     display: flex;
     flex-direction: column;

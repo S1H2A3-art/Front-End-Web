@@ -6,9 +6,9 @@ const GRIDSIZE = 800;
 let grids = new Array(GRIDSIZE / GRIDLENGTH);
 
 let font;
-async function preload() {
+function preload() {
   showMode = "key";
-  await displayBasicInformation();
+  displayBasicInformation();
 
   font = loadFont("Assets/font1.ttf");
 }

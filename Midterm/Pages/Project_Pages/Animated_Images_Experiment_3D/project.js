@@ -20,9 +20,9 @@ let buttons = [
 function buttonPressed() {
   mode = this.value();
 }
-async function preload() {
+function preload() {
   showMode = "key";
-  await displayBasicInformation();
+  displayBasicInformation();
   img2 = loadImage("Assets/img4.png");
 }
 //returns index of pixel for a given x,y and width of the image

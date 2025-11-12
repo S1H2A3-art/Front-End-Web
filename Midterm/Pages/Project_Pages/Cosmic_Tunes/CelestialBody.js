@@ -52,10 +52,12 @@ class CelestialBody {
       cylinder(this.radius + 5, 0.01, 24, 1, true, true);
       pop();
     }
+    if(this.radius){
     noStroke();
     texture(this.img);
-    sphere(this.radius, 500, 500);
+    sphere(this.radius,500,500);
     pop();
+    }
   }
 }
 

@@ -364,8 +364,8 @@ let img2;
 let img3;
 let img4;
 
-async function preload() {
-  await displayBasicInformation();
+function preload() {
+  displayBasicInformation();
   img1 = loadImage("../Aristotle_vs_Giant_Robot_Octopuses/Assets/Aristotle.png");
   img2 = loadImage("../Aristotle_vs_Giant_Robot_Octopuses/Assets/Octopus.png");
   img3 = loadImage("../Aristotle_vs_Giant_Robot_Octopuses/Assets/floor.png");

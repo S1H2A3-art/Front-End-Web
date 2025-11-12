@@ -120,8 +120,8 @@ function keyPressed() {
     }
   }
 }
-async function preload(){
-    await displayBasicInformation();
+function preload(){
+    displayBasicInformation();
 }
 let canvas1;
 function setup() { 
