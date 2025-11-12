@@ -120,11 +120,12 @@ function keyPressed() {
     }
   }
 }
-function preload(){
-    displayBasicInformation();
+async function preload1(){
+    await displayBasicInformation();
 }
 let canvas1;
-function setup() { 
+async function setup() { 
+    await preload1();
   canvas1 = createCanvas(HORIZONTAL_PICTURES * PICWIDTH, VERTICLE_PICTURES * PICHEIGHT);
   canvas1.parent(document.getElementById("projectContainer"));
   pixelDensity(1);

@@ -65,6 +65,8 @@ let img1;
 function preload() {
     displayBasicInformation();
   img1 = loadImage("Assets/img1.gif");
+ 
+
 }
 
 //index variable that navigates through the array of pixels

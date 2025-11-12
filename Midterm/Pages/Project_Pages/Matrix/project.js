@@ -6,11 +6,14 @@ const GRIDSIZE = 800;
 let grids = new Array(GRIDSIZE / GRIDLENGTH);
 
 let font;
-function preload() {
-  showMode = "key";
-  displayBasicInformation();
+async function preload1() {
 
+  showMode = "key";
+  await displayBasicInformation();
+  
   font = loadFont("Assets/font1.ttf");
+ 
+
 }
 
 //determines which function to perform
@@ -214,7 +217,8 @@ function keyPressed(){
     keyPressedShow();
 }
 let canvas;
-function setup() {
+async function setup1() {
+  await preload1();
   canvas = createCanvas(2000, 1400, WEBGL);
   canvas.parent(document.getElementById("projectContainer"));
   for (let i = 0; i < buttons.length; i++) {
@@ -251,7 +255,10 @@ function setup() {
   noLoop();
 }
 
-function draw() {
+async function draw() {
+  if(frameCount==1){
+    await setup1();
+  }
   background("black");
   
   translate(

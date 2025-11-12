@@ -187,14 +187,16 @@ let pred = false;
 let index = 0;
 //variable used to check each predator in the arry in a while loop
 let index2 = 0;
-function preload(){
-    displayBasicInformation();
+let img = [];
+async function preload1(){
+    await displayBasicInformation();
 }
-let canvas;
-function setup() {
-  canvas = createCanvas(1400, 1400);
-  canvas.parent(document.getElementById("projectContainer"));
-
+let canvas1;
+async function setup() {
+  await preload1();
+  canvas1 = createCanvas(1400, 1400);
+  canvas1.parent(document.getElementById("projectContainer"));
+  
   //creates the first prey object
   preys[0] = new prey(width / 2, height / 2, 255, 255, 255);
 
@@ -205,8 +207,9 @@ function setup() {
       vegetations[i / 20][j / 20] = new vegetation(i, j);
     }
   }
+  
   textSize(20);
-  noLoop();
+  
 }
 function draw() {
   
@@ -259,7 +262,7 @@ function draw() {
       }
     }
   }
-  showHint(40);
+  
   //display the population of the preys and the predators and their ratio
   push();
   fill(255,255,255,100);
@@ -269,5 +272,5 @@ function draw() {
   text("Prey: " + preys.length, 5*2, 20*2);
   text("Predator: " + predators.length, 80*2, 20*2);
   text("Ratio: 1:" + floor(preys.length / predators.length), 160*2, 20*2);
-  
+  showHint(40);
 }
