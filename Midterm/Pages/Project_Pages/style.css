@@ -195,4 +195,6 @@ pre{
     overflow: auto;
     max-height: 40rem;
     border: 0.2rem dotted red;
+    width: fit-content;
+    max-width: 100%;
 }
