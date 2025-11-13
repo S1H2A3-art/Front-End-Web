@@ -277,6 +277,17 @@
         "mini_icon":"Projects/Project_Icons/At the Dawn of the World.png",
         "large_icon":"",
         "page":"At_the_Dawn_of_the_World/index.html"
+    },
+    {
+        "title": "Portfolio Website",
+        "secondary_title": "Front-End Web Final",
+        "category":"javascript, CSS, HTML",
+        "description":"",
+        "date":"November 12, 2025",
+        "concepts":["connection","vessal","consciousness","concept","externalization"],
+        "mini_icon":"Projects/Project_Icons/Portfolio Website.png",
+        "large_icon":"",
+        "page":"Portfolio_Website/index.html"
     }
     
 ]

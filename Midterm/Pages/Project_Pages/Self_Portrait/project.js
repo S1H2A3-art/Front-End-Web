@@ -46,7 +46,7 @@ async function preload1(){
   await displayBasicInformation();
 }
 let canvas;
-async function setup() {
+async function setup1() {
 await preload1();
 canvas = createCanvas(2000, 1400);
 
@@ -77,7 +77,11 @@ let y3;
 let minLength;
 let translateL;
 
-function draw() {
+async function draw() {
+  if(frameCount===1){
+    await setup1();
+    return;
+  }
     window.addEventListener("keydown", function(e) {
   // Check if the pressed key is an arrow key or the spacebar
   if (["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(e.code) > -1) {

@@ -192,8 +192,9 @@ async function preload1(){
     await displayBasicInformation();
 }
 let canvas1;
-async function setup() {
+async function setup1() {
   await preload1();
+  
   canvas1 = createCanvas(1400, 1400);
   canvas1.parent(document.getElementById("projectContainer"));
   
@@ -212,7 +213,11 @@ async function setup() {
   noLoop();
   
 }
-function draw() {
+async function draw() {
+  if(frameCount==1){
+    await setup1();
+    return;
+  }
   
   //run the functions of the vegetation class for each vegetation object
   for (let i = 0; i < vegetations.length; i++) {
