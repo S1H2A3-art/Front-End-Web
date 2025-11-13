@@ -1,38 +1,34 @@
-name: Generate XML Sitemap
+name: Generate xml sitemap
 
 on:
   push:
-    branches: ["main"]
-  schedule:
-    - cron: "0 0 * * 0"  # OPTIONAL: regenerate weekly (Sunday at midnight)
+    branches: [ main ]
 
 jobs:
   sitemap_job:
     runs-on: ubuntu-latest
-
+    name: Generate a sitemap
     steps:
-      - name: Checkout repository
+      - name: Checkout the repo
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # needed for lastmod dates
+          fetch-depth: 0
 
-      - name: Generate sitemap
+      - name: Generate the sitemap
         uses: cicirello/generate-sitemap@v1
         with:
           base-url-path: https://s1h2a3-art.github.io/Front-End-Web/
-          include: "**/*.html"    # ensures it includes all HTML pages in your repo
-          exclude: "node_modules/**"
+          include-html: true
+          include-pdf: false
+          additional-extensions: ""
+          exclude-paths: "node_modules"
 
-      - name: Commit & push sitemap if changed
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit and push
         run: |
           if [[ -n "$(git status --porcelain sitemap.xml)" ]]; then
-            git config --global user.name "github-actions"
-            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git config --global user.name 'github-actions'
+            git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
             git add sitemap.xml
             git commit -m "Automated sitemap update"
             git push
-          else
-            echo "No changes to sitemap.xml"
           fi
