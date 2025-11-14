@@ -275,6 +275,17 @@
         "mini_icon":"Projects/Project_Icons/Portfolio Website.png",
         "large_icon":"",
         "page":"Portfolio_Website/index.html"
+    },
+    {
+        "title": "The Thinker",
+        "secondary_title": "Introduction to Machine Learning in the Arts Final Project",
+        "category":"javascript, AI",
+        "description":"",
+        "date":"November 13, 2025",
+        "concepts":[],
+        "mini_icon":"",
+        "large_icon":"",
+        "page":"The_Thinker/index.html"
     }
     
 ]
