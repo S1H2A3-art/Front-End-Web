@@ -9,7 +9,8 @@
     
     <meta charset="utf-8" />
 
-  </head>
+    <title>Random Planet Destruction Simulator</title>
+</head>
   <body>
     <!-- setup -->
     <script src="../DOM.js"></script>
@@ -44,18 +45,18 @@
       <!-- documentation -->
       <h2>Documentation</h2>
       <h3>Random Select & Remove Function</h3>
-      <img src="page_asset/img1.png" width="40%">
+      <img src="page_asset/img1.png" width="40%" alt="Random Select & Remove Function">
       <p>In addition, since the index number of each planet is altered by the select&remove function, instead of identifying them based on their position in the array, I had to create a boolean variable within the object to constantly check their new position in the array. This was necessary for planets like the Earth, the Moon, and Saturn, whose codes are different from that of the rest of the planets.</p>
-      <img src="page_asset/img2.png" width="40%">
+      <img src="page_asset/img2.png" width="40%" alt="In addition, since the index number of each planet is altered by the select&remove function, instead of identifying them based on their p...">
 
       <custom-spacing size = "5rem"></custom-spacing>
 
       <h3>Explosion Particle Effect</h3>
       <p>Next, I wanted to create an explosion effect each time a planet is removed. I borrowed the code from this link, as the project is mostly about the selection&remove function: https://editor.p5js.org/Bacarri_WB/sketches/oL3nA9JYd
       I changed some of the values to achieve the effect that I wanted to achieve such as, how fast the particles move away from the center of explosion, the sizes of the particles, their colors, etc. I also wanted to change the position of the center of explosion based on the planet selected to remove so each planet has their own explosion effect. This attempt was unsuccessful, however, since a lot of problems occured when I was trying to obtain the direct coordinates of each planet.</p>
-      <img src="page_asset/img3.png" width="40%">
+      <img src="page_asset/img3.png" width="40%" alt="I changed some of the values to achieve the effect that I wanted to achieve such as, how fast the particles move away from the center of ...">
       <p>I also inserted a text indicating which planet was randomly selected to removed after they are removed. This was achieved in WEBGL by fixing the camera angle towards the center.</p>
-      <img src="page_asset/img4.png" width="40%">
+      <img src="page_asset/img4.png" width="40%" alt="I also inserted a text indicating which planet was randomly selected to removed after they are removed. This was achieved in WEBGL by fix...">
 
       <custom-spacing size = "10rem"></custom-spacing>
 

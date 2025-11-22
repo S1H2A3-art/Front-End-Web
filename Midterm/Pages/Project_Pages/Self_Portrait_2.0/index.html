@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <title>Self Portrait 2.0</title>
+
     <link rel="icon" href="../../../Assets/icon.jpeg" type="image/x-icon">
    <script src="../../../libraries/p5.min.js"></script>
     <script src="../../../libraries/p5.sound.min.js"></script>
@@ -51,7 +53,7 @@
       
       <h3>Process</h3>
       <p>I started by thinking of ways to triangulate the face using key points outputted by the faceMesh model. I figured that it's really hard to draw each triangle one-by-one unless you hardcode which key points to connect. I used a source on the class github:<a href="https://editor.p5js.org/jackbdu/sketches/J_NYWKtT7">link</a> which records the path of all the triangles in an array.</p>
-      <img src="page_asset/img1.png" width="40%">
+      <img src="page_asset/img1.png" width="40%" alt="I started by thinking of ways to triangulate the face using key points outputted by the faceMesh model. I figured that it's really hard t...">
       <p>Next, I stored each triangle as Tri objects in an array. A function(Tri.update()) will loop through the array to determine the new position, size, and color of each Tri object based on the video input. Then, I programmed a function checkTriHover() to make a triangle disappear when the mouse hovers above it. Triangle collision is calculated the same way as in Self Portrait. As more triangles disappear, the flashing effect will grow more intense, until the program resets when most of the triangles have disappeared. These effects are all based on the original visual style of Self Portrait.</p>
       
 

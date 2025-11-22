@@ -111,11 +111,13 @@ class ImageGallery extends HTMLElement{
         this.column = this.getAttribute("column");
         this.row = this.getAttribute("row");
         this.images = this.innerText.split(',');
+        const altPrefix = this.getAttribute("alt-prefix") || document.title || "Project image";
         this.innerHTML = "";
         for(let i = 0; i < this.row; i++){
             let imageRows = `<div class="imageRow">`;
             for(let j = 0; j < this.column; j++){
-                imageRows += `<img width="${100/this.column}%" style="margin:${(100/this.column-5)/100}%; " src = "${this.images[j+i*this.column]}">`
+                const index = j + i * this.column + 1;
+                imageRows += `<img width="${100/this.column}%" style="margin:${(100/this.column-5)/100}%; " src = "${this.images[j+i*this.column]}" alt="${altPrefix} ${index}">`
             }
             imageRows += `</div>`;
             this.innerHTML += imageRows;
@@ -132,12 +134,13 @@ class TextAndImage extends HTMLElement{
         this.classList.add("textAndImage");
         this.content = this.innerText.split(",,");
         this.innerHTML="";
+        const altPrefix = this.getAttribute("alt-prefix") || document.title || "Project image";
         if(this.content[0].startsWith("page_asset")||this.content[0].startsWith("Assets")){
-            this.innerHTML += `<div style="width:50%" ><img width="100%" style="margin-right:1rem"src="${this.content[0]}"></div>`;
+            this.innerHTML += `<div style="width:50%" ><img width="100%" style="margin-right:1rem"src="${this.content[0]}" alt="${altPrefix} illustration"></div>`;
             this.innerHTML += `<div style="width:50%"><p style="margin-left:2rem">${this.content[1]}</p></div>`
         }else{
             this.innerHTML += `<div style="width:50%"><p style="margin-right:2rem">${this.content[0]}</p></div>`
-            this.innerHTML += `<div style="width:50%"><img width="100%" style="margin-left:1rem" src="${this.content[1]}"></div>`;
+            this.innerHTML += `<div style="width:50%"><img width="100%" style="margin-left:1rem" src="${this.content[1]}" alt="${altPrefix} illustration"></div>`;
         }
     }
 }
