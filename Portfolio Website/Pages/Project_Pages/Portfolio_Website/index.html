@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="../../../Assets/icon.jpeg" type="image/x-icon">
+    <script src="../../../libraries/p5.min.js"></script>
+    <script src="../../../libraries/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    
+    <meta charset="utf-8" />
+
+    <title>Portfolio Website</title>
+</head>
+  <body>
+    <script src="../../../AIAssistant.js" defer></script>
+    <!-- setup -->
+    <script src="../DOM.js"></script>
+    <script src="../goBack.js"></script>
+    <script src="../../processProjects.js"></script>
+    <script src="../toggleShow.js" defer></script>
+    <script src="project.js"></script>
+    <script src="../displayBasicInformation.js"></script>
+    <button id = "returnButton" onclick="goBackOrHome()"><a href="javascript:void(0);">&lt; Shawn Qiu</a></button>
+    
+    <!-- content -->
+    <div id = "mainDisplay">
+    <div id = "pageBody">
+
+      <!-- project -->
+      <custom-spacing size = "2rem"></custom-spacing>
+
+      <custom-seperator></custom-seperator>
+
+      <custom-spacing size = "3rem"></custom-spacing>
+
+      <control-instruction instructions ="hide"></control-instruction>
+
+      <custom-spacing size = "5rem"></custom-spacing>
+
+      <div id = "projectContainer"></div>
+
+      <custom-spacing size = "10rem"></custom-spacing>
+      <custom-seperator></custom-seperator>
+      <custom-spacing size = "1rem"></custom-spacing>
+
+      <!-- documentation -->
+      <h2>Documentation</h2>
+      <h3><i>Final Proposal</i></h3>
+      <h3>Review of midterm project</h3>
+      <img src="page_asset/img1.png" alt="Review of midterm project">
+      <h3>What I’ve achieved</h3>
+      <ol>
+        <li>The first goal is achieved with the integration of a concept navigational network.</li>
+        <li>Second is mostly achieved. Most JavaScript-only projects(except for one, which is too large) are embedded in their respective documentation page.</li>
+        <li>Not really. Might have to store larger files in a database. I don’t plan to host the website on GitHub in the future, though.</li>
+        <li>It is completely free.</li>
+        <li>I have completed the page for each project.</li>
+      </ol>
+      <h3>New issues that were introduced</h3>
+      <ol>
+        <li>
+            automating the process of adding a new project. minimize the amount of code manipulation and stick to changing only the HTML code
+            <ul>
+                <li>I created DOMs(image-gallery, custom-seperator, control-instruction, etc) that aggregate multiple tags</li>
+                <li>I developed JS functions that are automatic and converge multiple different functions(displayBasicInformation.js, toggleShow.js, etc.)</li>
+                <li>However, there are still around 7-10 lines of code that I have to add manually for each project. There are also some issues with the current framework that I need to fix. However, it should be completely functional and competent.</li>
+            </ul>
+        </li>
+        <li>
+            Add pages, a search bar, and a filter to the archive page.
+            <ul>
+                <li>I need to work on this. However, it is not my top priority because the logic should be pretty simple, and the website’s main focus is not on a linear navigation system.</li>
+            </ul>
+        </li>
+        <li>
+            Optimize for more devices
+            <ul>
+                <li>I need to work on this, especially for devices with smaller screens. This may be difficult because I am not sure if a lot of the P5 projects will run smoothly or provide a good user experience. What I might do is to simply disallow mobile access to these p5.js sketches.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>What I want to focus on:</strong> analyze the data from the website,  establish meaningful connections between the projects, and provide a more interactive experience.
+        </li>
+      </ol>
+      <h3>Solution: RAG!</h3>
+      <p><strong>Definition</strong></p>
+      <pre>
+        <p style="margin-left: 0;margin-right: 1rem;">
+        RAG AI, or Retrieval-Augmented Generation, is an advanced artificial intelligence 
+        architecture that combines information retrieval capabilities with generative language 
+        models. This approach allows AI models to reference external knowledge bases, enhancing 
+        their ability to produce accurate and contextually grounded responses. By integrating 
+        retrieval mechanisms, RAG optimizes the performance of large language models, enabling 
+        them to deliver more relevant and high-quality responses.
+        </p>
+      </pre>
+      <p><strong><i>Database + LLM = LLM with a specific concentration</i></strong></p>
+      <h3>Procedure</h3>
+      <p>I need to feed it the information on my website. First, I made an automated AI workflow on n8n that crawls data from my website by simply providing it the sitemap.xml link.</p>
+      <custom-spacing size = "3rem"></custom-spacing>
+      <img src="page_asset/img2.png" alt="I need to feed it the information on my website. First, I made an automated AI workflow on n8n that crawls data from my website by simply...">
+      <custom-spacing size = "3rem"></custom-spacing>
+      <p><a href="http://localhost:5678/workflow/s9mBJgoosI0Sw9qk">link to workflow</a></p>
+      <p>Then, I plan to embed the data from my website using <a href="https://github.com/QwenLM/Qwen3-Embedding">Qwen3-Embedding</a> so that the LLM understands the information.</p>
+      <p>Finally, I’ll use an LLM model that returns useful responses to users(questions, provides links to my other projects that use similar technologies, categorizations, recommendations based on users’ interest, summarizes pages, etc.) in the format of an AI assistant. </p>
+      <h3>Visual Reference</h3>
+      <custom-spacing size = "3rem"></custom-spacing>
+      <img src="page_asset/img4.png" alt="Visual Reference">
+      <custom-spacing size = "3rem"></custom-spacing>
+      <h3>Sitemap</h3>
+      <custom-spacing size = "3rem"></custom-spacing>
+      <img src="page_asset/img3.png" alt="Sitemap">
+      <custom-spacing size = "3rem"></custom-spacing>
+      <h3>Wireframe</h3>
+      <custom-spacing size = "3rem"></custom-spacing>
+      <img src="page_asset/img5.png" alt="Wireframe">
+      <custom-spacing size = "3rem"></custom-spacing>
+      <img src="page_asset/img6.png" alt="Wireframe">
+      <custom-spacing size = "10rem"></custom-spacing>
+
+    </div>
+    </div>
+    
+  </body>
+</html>
