@@ -30,7 +30,7 @@ async function displayBasicInformation(){
          `
          for(let concept of currentProject.concepts){
             projectContent += `
-               <a class = "conceptTag" href = "../../Navigation_Page/Explorer.html?concept=${encodeURIComponent(concept)}">
+               <a class = "conceptTag" href = "../../Explorer_Page/Explorer.html?concept=${encodeURIComponent(concept)}">
                   ${concept}
                </a>   
             `

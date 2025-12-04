@@ -75,7 +75,7 @@ let moonI;
 //c stores the randomly selected planet to remove
 let c;
 function keyPressed() {
-    keyPressedShow();
+  keyPressedShow();
   
   //if D is pressed, create the explosion effect and remove the randomly selected planet from the array
   if (key == "D" || key == "d") {

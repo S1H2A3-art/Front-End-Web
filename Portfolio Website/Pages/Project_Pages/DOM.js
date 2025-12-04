@@ -135,12 +135,12 @@ class TextAndImage extends HTMLElement{
         this.content = this.innerText.split(",,");
         this.innerHTML="";
         const altPrefix = this.getAttribute("alt-prefix") || document.title || "Project image";
-        if(this.content[0].startsWith("page_asset")||this.content[0].startsWith("Assets")){
-            this.innerHTML += `<div style="width:50%" ><img width="100%" style="margin-right:1rem"src="${this.content[0]}" alt="${altPrefix} illustration"></div>`;
-            this.innerHTML += `<div style="width:50%"><p style="margin-left:2rem">${this.content[1]}</p></div>`
+        if(this.content[0].startsWith("page_asset")||this.content[0].startsWith("Assets")||this.content[0].startsWith("../")||this.content[0].startsWith("../../Assets")){
+            this.innerHTML += `<div style="width:50%" class="leftTextAndImageElement"><img width="100%" style="margin-right:1rem"src="${this.content[0]}" alt="${altPrefix} illustration"></div>`;
+            this.innerHTML += `<div style="width:50%" class="rightTextAndImageElement"><p style="margin-left:2rem">${this.content[1]}</p></div>`
         }else{
-            this.innerHTML += `<div style="width:50%"><p style="margin-right:2rem">${this.content[0]}</p></div>`
-            this.innerHTML += `<div style="width:50%"><img width="100%" style="margin-left:1rem" src="${this.content[1]}" alt="${altPrefix} illustration"></div>`;
+            this.innerHTML += `<div style="width:50%" class="leftTextAndImageElement"><p style="margin-right:2rem">${this.content[0]}</p></div>`
+            this.innerHTML += `<div style="width:50%" class="rightTextAndImageElement"><img width="100%" style="margin-left:1rem" src="${this.content[1]}" alt="${altPrefix} illustration"></div>`;
         }
     }
 }

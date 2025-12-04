@@ -6,11 +6,11 @@ function goBackOrHome() {
     let params = new URLSearchParams(window.location.search);
     let concept = params.get("concept");
     if(concept){
-       window.location.href = `../../Navigation_Page/Explorer.html?concept=${encodeURIComponent(concept)}`; 
+       window.location.href = `../../Explorer_Page/Explorer.html?concept=${encodeURIComponent(concept)}`; 
       return;
     }
     history.back();
   } else {
-    window.location.href = "../../Navigation_Page/Explorer.html"; 
+    window.location.href = "../../Explorer_Page/Explorer.html"; 
   }
 }

@@ -36,9 +36,9 @@ button:hover{
 }
 
 button:active{
-    box-shadow: 0.1rem 0.1rem 15px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.599);
-    background: rgba(0, 0, 0, 0.599); 
+  box-shadow: 0.1rem 0.1rem 15px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.599);
+  background: rgba(0, 0, 0, 0.599); 
 }
 
 a:link:hover{
@@ -140,13 +140,11 @@ a{
 
 .menuIcon:hover + #menuName, #menuName:hover{
   color:red;
-       text-shadow: 0.05rem 0.05rem 5px rgba(255, 0, 0, 0.336);  
-
+  text-shadow: 0.05rem 0.05rem 5px rgba(255, 0, 0, 0.336);  
 }
 
 .menuIcon:has(~ #menuName:hover), .menuIcon:hover{
   border-color: red;
-  
 }
 
 .menuIcon:active + #menuName, #menuName:active{
@@ -167,10 +165,8 @@ a{
   flex-direction: column;
   height: 100%;
   position: fixed;
-  
   justify-content: end;
   align-items: end;
-  
 }
 
 .menuItems{
@@ -246,8 +242,8 @@ a{
   right: 50px;
   border: 1px solid #ccc;
   padding: 1%;
-  width: 26%;
-  height: 34%;
+  width: 34%;
+  height: 60%;
   background-image: linear-gradient(to bottom right, rgba(237, 59, 74, 0.6), rgba(76, 59, 146, 0.602));
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
@@ -269,7 +265,7 @@ a{
   cursor: pointer;
   border: none;
   box-shadow: 0.2rem 0.2rem 40px rgb(138, 34, 72);
-  
+ 
 }
 
 /* Title wrapper shown only when minimized */
@@ -309,7 +305,12 @@ a{
 }
 
 #AIContainer:hover{
+  scale: 1.04;
+}
+
+#AIContainer.minimized:hover{
   scale: 1.1;
+  background-image: linear-gradient(to bottom right, rgba(248, 60, 75, 0.6), rgba(106, 80, 210, 0.602));
 }
 
 #AIContainerBody {
@@ -325,10 +326,13 @@ a{
 #AIChatBox {
   flex: 1;
   overflow-y: auto;
-  height: 300px;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: space-between;
+  align-items: stretch;
+  overflow-wrap: break-word;
+  margin-bottom: 15px;
 }
 
 .AIMessage {
@@ -340,6 +344,16 @@ a{
   text-align: right;
   margin: 5px;
   color: lightblue;
+}
+
+.AIMessage, .userMessage, .messageContent{
+  white-space: normal;          
+  overflow-wrap: anywhere;   
+  word-wrap: break-word;       
+  max-width: 100%;            
+  display: block;              
+  width: 100%;                 
+  hyphens: auto;               
 }
 
 #aiInputContainer {
@@ -357,10 +371,11 @@ a{
 #aiInputBox {
   background-color: transparent;
   width: 90%;
-  font-size: 1.5rem;
+  font-size: 2rem;
   border: none;
   outline: none;
   font-family: inherit;
+  padding-left: 10px;
 }
 
 #minimizeButton {
@@ -391,6 +406,13 @@ a{
   background-color: transparent;
   cursor: pointer;
   box-shadow: none;
+  color: rgb(73, 16, 32);
+  opacity: 0.7;
+}
+
+#sendButton:hover {
+  opacity: 1;
+  text-shadow: 0.05rem 0.05rem 10px rgba(0, 0, 0, 0.226);
 }
 
 #AIFaceModelDisplay {
@@ -403,7 +425,7 @@ a{
   outline: none;
   opacity: 100%;
   z-index: 1005;
-  
+  pointer-events: none
 }
 
 #recommendationContainer{
@@ -424,7 +446,6 @@ a{
   background-image: linear-gradient(to bottom right, rgba(84, 21, 26, 0.129), rgba(22, 17, 42, 0.144));
   text-shadow: 1px 1px 2px rgba(96, 31, 54, 0.165);
   background-clip: text;
- 
   -webkit-text-fill-color: transparent; 
 }
 

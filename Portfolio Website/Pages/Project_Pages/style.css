@@ -71,14 +71,11 @@
 .imageRow{
     display: flex;
     flex-direction: row;
-    
-
 }
 
 .textAndImage{
     align-items: center;
-    display: flex;
-   
+    display: flex; 
 }
 
 li{
@@ -203,6 +200,14 @@ pre{
     overflow: auto;
     max-height: 40rem;
     border: 0.2rem dashed red;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.messageContent{
+    overflow: auto;
+    max-height: 100%;
+    border: none;
     width: fit-content;
     max-width: 100%;
 }

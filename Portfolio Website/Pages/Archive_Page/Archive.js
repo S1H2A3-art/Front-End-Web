@@ -56,7 +56,7 @@ function addProjectDivs(){
          `
          for(let concept of project.concepts){
             projectContent += `
-               <a class = "conceptTag" href = "../Navigation_Page/Explorer.html?concept=${encodeURIComponent(concept)}">
+               <a class = "conceptTag" href = "../Explorer_Page/Explorer.html?concept=${encodeURIComponent(concept)}">
                   ${concept}
                </a>   
             `
@@ -191,4 +191,3 @@ function changePage(num){
    searchProjects();
    window.scrollTo(0, 0);
 }
-
