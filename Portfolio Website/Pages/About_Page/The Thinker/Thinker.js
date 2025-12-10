@@ -146,7 +146,7 @@ let Thinker = {
     // retrieve response from LLM based on the LLM prompt
     async generateLLMThought(prompt) {
         try {
-            const res = await fetch("http://localhost:5678/webhook/8d84f4fe-79a7-4111-ac80-d482ca33bee8", {
+            const res = await fetch("https://shawnqiu.app.n8n.cloud/webhook/8d84f4fe-79a7-4111-ac80-d482ca33bee8", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ data: prompt,memorySessionId:this.memorySessionId })
@@ -191,7 +191,7 @@ let Thinker = {
         const seed = baseSeed + Math.floor(Math.random() * 3);
 
    
-        const res = await fetch("http://localhost:5678/webhook/ad0e4ce7-a0d2-4bdb-a41a-576c20adc793", {
+        const res = await fetch("https://shawnqiu.app.n8n.cloud/webhook/ad0e4ce7-a0d2-4bdb-a41a-576c20adc793", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

@@ -4,7 +4,7 @@
 
 let AIAssistant = {
     // URL to RAG workflow
-    webHookURL: "http://localhost:5678/webhook/a96db540-175e-473a-85a9-d3bac0b6fa8b",
+    webHookURL: "https://shawnqiu.app.n8n.cloud/webhook/a96db540-175e-473a-85a9-d3bac0b6fa8b",
     minimized: false,
     // interval between each AI face model image switch
     interval: 400,
@@ -341,7 +341,7 @@ let AIAssistant = {
 
         let randomIndex;
         randomIndex = Math.floor(Math.random() * this.AIFaceModelImages.length);
-        
+
         return randomIndex;
     },
 
