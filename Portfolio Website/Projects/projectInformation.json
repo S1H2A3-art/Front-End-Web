@@ -282,9 +282,9 @@
         "category":"p5.js, AI, HTML",
         "description":"",
         "date":"November 13, 2025",
-        "concepts":["simulation", "cycle", "escape", "interaction", "game"],
+        "concepts":["simulation", "cycle", "consciousness", "interaction", "escape"],
         "mini_icon":"Projects/Project_Icons/The Thinker.png",
-        "large_icon":"",
+        "large_icon":"The Thinker is an AI-driven interactive experience hidden within my portfolio website, where users stumble into a conversation with an autonomous digital character trapped inside the page. Through philosophical prompts, users gradually destabilize the Thinker’s mind, provoking visual distortion and emotional unraveling. The project blends narrative, animation, and real-time AI generation to explore how an artificial consciousness might perceive its own existence.",
         "page":"The_Thinker/index.html"
     }
     
