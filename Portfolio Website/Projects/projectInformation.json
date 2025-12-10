@@ -280,11 +280,11 @@
         "title": "The Thinker",
         "secondary_title": "Introduction to Machine Learning in the Arts Final Project",
         "category":"p5.js, AI, HTML",
-        "description":"",
+        "description":"The Thinker is an AI-driven interactive experience hidden within my portfolio website, where users stumble into a conversation with an autonomous digital character trapped inside the page. Through philosophical prompts, users gradually destabilize the Thinker’s mind, provoking visual distortion and emotional unraveling. The project blends narrative, animation, and real-time AI generation to explore how an artificial consciousness might perceive its own existence.",
         "date":"November 13, 2025",
         "concepts":["simulation", "cycle", "consciousness", "interaction", "escape"],
         "mini_icon":"Projects/Project_Icons/The Thinker.png",
-        "large_icon":"The Thinker is an AI-driven interactive experience hidden within my portfolio website, where users stumble into a conversation with an autonomous digital character trapped inside the page. Through philosophical prompts, users gradually destabilize the Thinker’s mind, provoking visual distortion and emotional unraveling. The project blends narrative, animation, and real-time AI generation to explore how an artificial consciousness might perceive its own existence.",
+        "large_icon":"",
         "page":"The_Thinker/index.html"
     }
     
