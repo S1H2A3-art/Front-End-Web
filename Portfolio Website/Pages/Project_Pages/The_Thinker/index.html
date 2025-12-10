@@ -53,6 +53,13 @@
         mental breakdown through conversation.
       </p>
 
+      <h3>Source Code</h3>
+      <p><a href="https://github.com/S1H2A3-art/Front-End-Web/tree/main/Portfolio%20Website/Pages/About_Page/The%20Thinker">
+          Link to the Thinker JS files</a>
+        <br><a
+          href="https://github.com/S1H2A3-art/Front-End-Web/blob/main/Portfolio%20Website/Pages/About_Page/ThinkerActivation.js">Link to the Thinker activation logic</a>
+      </p>
+
       <h3>Project Summary</h3>
       <p>While navigating the About page of Shawn’s portfolio website, users encounter a collage of newspaper and
         magazine clippings forming the image of the Thinker. I originally created this collage in high school, and it
@@ -160,44 +167,66 @@
   "behavioralRules": "Pressure adjustment is NOT chosen arbitrarily. Increase pressure (+0.01 to +0.20) when: the user asks for introspection, philosophy, or self-reflection, the user asks about memory, identity, existence, or confinement, the user expresses uncertainty or complexity, you feel inner tension or conceptual strain. Decrease pressure (–0.01 to –0.20) when: the user is gentle, grounding, simple, or comforting, the user expresses clarity, simplicity, or reassurance, the moment feels calm or resolved. Use small adjustments for mild effects (±0.01–0.05). Use larger adjustments when emotion is intense (±0.10–0.20). You MUST choose a value based on the user message and the current pressure_level.You may NOT always choose the same number."
 }</code></pre>
 
-<p>Initially, I considered fine-tuning a language model to achieve more consistent speech patterns and to better simulate an autonomous consciousness. However, fine-tuning is time-consuming, computationally expensive, and may still fail to produce the precise behavior I had in mind. Instead, I chose to simulate the appearance of a character through rigorous prompt engineering to determine its personality, tone, appearances, etc.
-</p>
+      <p>Initially, I considered fine-tuning a language model to achieve more consistent speech patterns and to better
+        simulate an autonomous consciousness. However, fine-tuning is time-consuming, computationally expensive, and may
+        still fail to produce the precise behavior I had in mind. Instead, I chose to simulate the appearance of a
+        character through rigorous prompt engineering to determine its personality, tone, appearances, etc.
+      </p>
 
-<p>After the LLM processes the data, the Thinker’s textual response is displayed directly on the page, while its image prompt is constructed in JavaScript based on the Thinker’s emotional state, facial expression, and implied actions. This constructed image prompt is then sent to a separate n8n workflow that:
-</p>
-<img src="page_asset/img5.png">
-<ol>
-  <li>Generates a reference image from the prompt.</li>
-  <li>Produces five additional images similar to the reference.</li>
-  <li>Removes the backgrounds from all five images.</li>
-  <li>Returns the processed images to the webpage.</li>
-</ol>
-<p>A pixelation effect is then applied to the five images, which are displayed in rapid alternation to create the impression of subtle movement and animation.
-The pixelation effect uses <a href="https://github.com/S1H2A3-art/Front-End-Web/blob/main/Portfolio%20Website/Pages/About_Page/The%20Thinker/Grid.js">Grid.js</a>, which is something that I made for one of my previous projects: <a href="../Zero_Gravity_Theatre:_The_Brothers_Karamazov/index.html?project=Zero%20Gravity%20Theatre%3A%20The%20Brothers%20Karamazov">Zero Gravity Theatre: The Brothers Karamazov</a>.</p>
+      <p>After the LLM processes the data, the Thinker’s textual response is displayed directly on the page, while its
+        image prompt is constructed in JavaScript based on the Thinker’s emotional state, facial expression, and implied
+        actions. This constructed image prompt is then sent to a separate n8n workflow that:
+      </p>
+      <img src="page_asset/img5.png">
+      <ol>
+        <li>Generates a reference image from the prompt.</li>
+        <li>Produces five additional images similar to the reference.</li>
+        <li>Removes the backgrounds from all five images.</li>
+        <li>Returns the processed images to the webpage.</li>
+      </ol>
+      <p>A pixelation effect is then applied to the five images, which are displayed in rapid alternation to create the
+        impression of subtle movement and animation.
+        The pixelation effect uses <a
+          href="https://github.com/S1H2A3-art/Front-End-Web/blob/main/Portfolio%20Website/Pages/About_Page/The%20Thinker/Grid.js">Grid.js</a>,
+        which is something that I made for one of my previous projects: <a
+          href="../Zero_Gravity_Theatre:_The_Brothers_Karamazov/index.html?project=Zero%20Gravity%20Theatre%3A%20The%20Brothers%20Karamazov">Zero
+          Gravity Theatre: The Brothers Karamazov</a>.</p>
 
-<p>As I continued developing the project, I realized that completing it would require an extensive amount of time refining the narrative and designing the AI character—much of which would need to be hard-coded and not AI-related. Achieving the level of polish I envisioned would demand work in animation, storytelling, character design, and other areas I am not yet fully prepared to explore. This is also when I recognized that, for now, it would be more practical to shift my focus toward building an AI assistant for my portfolio website instead.
-</p>
-<p>With that in mind, I decided to preserve the existing technical framework and ensure that it functions reliably, rather than investing heavily in story development or visual characterization at this stage. I plan to revisit and expand this project in the future—perhaps for my nonlinear storytelling class—once I have more time and experience to focus on the narrative aspects.
-</p>
-<h3>Audience/Context</h3>
-<p>In its current form, the project is hidden within my portfolio website as an easter egg—an approach I expect to maintain as the project evolves, since it aligns naturally with the character’s backstory. For now, it serves primarily as a playful, unexpected interaction for visitors exploring the site. As I continue to develop the narrative, however, I hope to expand the project’s philosophical depth, encouraging users to reflect on ethical and metaphysical questions surrounding how an AI might experience reality from a first-person perspective, including its emotions, limitations, and sense of self.</p>
-   
-<h3>User Testing</h3>
-<p>Originally, the Thinker image was interactive—its scale would gradually shrink as the user hovered over it. A friend suggested making the activation logic more subtle by removing these visual cues, allowing the encounter to feel more unexpected and exciting
-</p>
-<h3>Next Steps</h3>
-<ol>
-  <li>Further enrich the storytelling and deepen the Thinker’s character.</li>
-  <li>Enhance user interaction by integrating voice generation through ElevenLabs.</li>
-  <li>Increase the Thinker’s autonomy so it can speak or think even without user input.</li>
-  <li>Allow the Thinker to move across the webpage independently.</li>
-  <li>Add a countdown mechanism that periodically refreshes the Thinker’s memory.</li>
-</ol>
-<custom-spacing size="5rem"></custom-spacing>
+      <p>As I continued developing the project, I realized that completing it would require an extensive amount of time
+        refining the narrative and designing the AI character—much of which would need to be hard-coded and not
+        AI-related. Achieving the level of polish I envisioned would demand work in animation, storytelling, character
+        design, and other areas I am not yet fully prepared to explore. This is also when I recognized that, for now, it
+        would be more practical to shift my focus toward building an AI assistant for my portfolio website instead.
+      </p>
+      <p>With that in mind, I decided to preserve the existing technical framework and ensure that it functions
+        reliably, rather than investing heavily in story development or visual characterization at this stage. I plan to
+        revisit and expand this project in the future—perhaps for my nonlinear storytelling class—once I have more time
+        and experience to focus on the narrative aspects.
+      </p>
+      <h3>Audience/Context</h3>
+      <p>In its current form, the project is hidden within my portfolio website as an easter egg—an approach I expect to
+        maintain as the project evolves, since it aligns naturally with the character’s backstory. For now, it serves
+        primarily as a playful, unexpected interaction for visitors exploring the site. As I continue to develop the
+        narrative, however, I hope to expand the project’s philosophical depth, encouraging users to reflect on ethical
+        and metaphysical questions surrounding how an AI might experience reality from a first-person perspective,
+        including its emotions, limitations, and sense of self.</p>
+
+      <h3>User Testing</h3>
+      <p>Originally, the Thinker image was interactive—its scale would gradually shrink as the user hovered over it. A
+        friend suggested making the activation logic more subtle by removing these visual cues, allowing the encounter
+        to feel more unexpected and exciting
+      </p>
+      <h3>Next Steps</h3>
+      <ol>
+        <li>Further enrich the storytelling and deepen the Thinker’s character.</li>
+        <li>Enhance user interaction by integrating voice generation through ElevenLabs.</li>
+        <li>Increase the Thinker’s autonomy so it can speak or think even without user input.</li>
+        <li>Allow the Thinker to move across the webpage independently.</li>
+        <li>Add a countdown mechanism that periodically refreshes the Thinker’s memory.</li>
+      </ol>
+      <custom-spacing size="5rem"></custom-spacing>
       <custom-seperator></custom-seperator>
       <custom-spacing size="5rem"></custom-spacing>
-
-
 
       <h3><i>Final Proposal</i></h3>
       <h3>Project title: The Thinker</h3>

@@ -269,9 +269,9 @@
         "title": "Portfolio Website",
         "secondary_title": "Front-End Web & Introduction to Machine Learning in the Arts Final Project",
         "category":"HTML, AI, Graphic Design",
-        "description":"",
-        "date":"November 12, 2025",
-        "concepts":["connection","vessal","consciousness","concept","identity"],
+        "description":"This project uses structured project data, conceptual mapping, and a RAG-powered AI system to model my creative identity directly through my portfolio website. As new works are added, the system updates dynamically, producing a continually evolving representation of who I am as a creator. The project explores the philosophical tension between an artist and the identity mirrored back by their own creations.",
+        "date":"October 4, 2025",
+        "concepts":["connection","creation","consciousness","concept","identity"],
         "mini_icon":"Projects/Project_Icons/Portfolio Website.png",
         "large_icon":"",
         "page":"Portfolio_Website/index.html"
