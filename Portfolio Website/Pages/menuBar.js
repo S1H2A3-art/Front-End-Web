@@ -45,13 +45,13 @@ function toggleMenu(){
         if(currentWindow.endsWith("Explorer.html")){
             let navigationPage = document.getElementById("Explorer_Page");
             navigationPage.innerHTML = `
-            <a>Navigator</a>
+            <a>Explorer</a>
             <div class="circle"> </div>
             `
         }else if(currentWindow.endsWith("Project.html")){
             let navigationPage = document.getElementById("Explorer_Page");
             navigationPage.innerHTML = `
-            <a href="../Explorer_Page/Explorer.html">Navigator</a>
+            <a href="../Explorer_Page/Explorer.html">Explorer</a>
             `
         }
 

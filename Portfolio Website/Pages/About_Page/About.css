@@ -1,3 +1,7 @@
+body{
+    opacity:1;
+}
+
 #mainDisplay {
     display: flex;
     justify-content: center;
@@ -11,7 +15,6 @@
     max-width: 80%;
     margin-top: 2%;
     margin-left: 10%;
-
 }
 
 h1 {
@@ -35,7 +38,6 @@ img {
     border-radius: 5rem;
 }
 
-
 p,
 li {
     font-family: "manrope";
@@ -44,16 +46,11 @@ li {
     line-height: 1.5;
 }
 
-
-
-
 .customSpacing {
     color: rgba(255, 255, 255, 0);
     width: "100%";
     display: "block";
 }
-
-
 
 .rightTextAndImageElement {
     margin-left: 4rem;
@@ -73,12 +70,15 @@ li {
     height: 100%;
     font-size: 2.5rem;
     margin: none;
-    background-image: radial-gradient(circle, rgba(119, 119, 119, 0.184), rgb(255, 255, 255), rgb(255, 255, 255));
+    background-image: linear-gradient(to top left, rgba(124, 124, 124, 0.756), rgb(231, 231, 231), rgb(255, 255, 255));
     opacity: 0.7;
     transition: scale 0.3s;
     cursor: pointer;
 }
 
+#descriptionButton{
+    background-image: radial-gradient(circle, rgba(233, 233, 233, 0.756), rgb(231, 231, 231), rgb(255, 255, 255));
+}
 
 #descriptionButton:disabled,
 #skillsDescriptionButton:disabled,
@@ -91,7 +91,6 @@ li {
     color: white;
     opacity: 1;
     scale: 1.05;
-
     background-image: linear-gradient(to bottom right, rgba(248, 60, 76, 0.66), rgba(106, 80, 210, 0.643));
 }
 
@@ -99,7 +98,7 @@ li {
 #skillsDescriptionButton:disabled,
 #featuredProjectsButton:disabled,
 #interestedConceptsButton:disabled {
-     animation: gradient-animation 25s linear infinite;
+    animation: gradient-animation 25s linear infinite;
     scale: 1.0;
     color: rgba(0, 0, 0, 0.64);
 
@@ -118,16 +117,17 @@ li {
     opacity: 0.7;
 }
 
- @keyframes gradient-animation {
-        0% {
-            background-position: 0% 0%;
-        }
-        100% {
-            background-position: 100% 0%; /* Moves the gradient horizontally */
-        }
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 0%;
     }
+    100% {
+        background-position: 100% 0%; /* Moves the gradient horizontally */
+    }
+}
 
 #skillsDescriptionContainer {
+    overflow-x: hidden;
     height: 50rem;
     overflow-y: auto;
     border-width: 0.1rem;
@@ -137,6 +137,7 @@ li {
 }
 
 #featuredProjectsContainer {
+    overflow-x: hidden;
     height: 50rem;
     overflow-y: auto;
     border-width: 0.1rem;
@@ -146,7 +147,7 @@ li {
 }
 
 #interestedConceptsContainer {
-     display: flex;
+    display: flex;
     height: 50rem;
     padding: 1rem;
     align-items: center;
@@ -169,8 +170,6 @@ pre {
     font-size: 2rem;
     overflow-y: auto;
 }
-
-
 
 .leftTextAndImageElement:hover{
    cursor: pointer;

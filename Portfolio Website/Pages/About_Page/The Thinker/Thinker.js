@@ -5,58 +5,40 @@
 
 let Thinker = {
 
-    /* ===========
-       INTERNAL STATE
-       (Controlled by JavaScript, NOT the LLM)
-       =========== */
+    /* =========== INTERNAL STATE =========== */
 
     pressureLevel: 0.0,          // value 0.0 — 1.0, represents instability
     pressureRange: "(0.0-0.3)",
-    memoryPhase: "clear",        // "clear" or "lost"
-    memorySummary: "",           // 1 poetic sentence (emptied on reset)
-    userImpression: "",          // 1 poetic sentence impression of the user
 
-    /* ===========
-       LAST OUTPUT FROM LLM
-       =========== */
+    /* =========== LAST OUTPUT FROM LLM =========== */
 
     json: null,                  // raw JSON returned by the LLM
 
     speech: "",                  // text the Thinker speaks
-    action: "idle",              // body motion keyword
-    expression: "neutral",       // facial micro-expression keyword
+    action: "idle",              // body motion
+    expression: "neutral",       // facial expression
     emotion: "neutral",
-    imagePrompt: "",             // SDXL Lightning prompt assembled from fields
+    imagePrompt: "",             // image prompt based on action, expression, and emotion
 
     /* ===========
        OUTPUT FROM ACT()
-       (Used by your rendering + audio layers)
        =========== */
-    referenceImage: null,
-    images: [],                  // generated image set
-    audioURL: null,              // ElevenLabs audio output
+    referenceImage: null,        // reference image
+    images: [],                  // generated image set based on reference image
     
-    /* ===========
-       CONSTANTS
-       (Tuning parameters for state transitions)
-       =========== */
+    /* =========== CONSTANTS =========== */
 
-    RESET_COOLDOWN: 0.0,        // pressure level after reset
     THINKER_IDENTITY: null,
+    memorySessionId: Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000,
 
-    /* ===========
-       CORE ENGINE FUNCTIONS
-       =========== */
+    /* =========== CORE ENGINE FUNCTIONS =========== */
 
     async think(userMessage) {
         // → Build the full prompt using current state and core identity prompt
         const prompt = this.buildLLMPrompt({ userMessage: userMessage });
         // → Send prompt to LLM
-        // → Parse the returned JSON
-        // → Extract: speech, action, expression, emotion, imagePrompt
-        // → Store JSON to this.json
+        // → Parse the returned JSON and store into this.response
         const response = await this.generateLLMThought(prompt);
-        //console.log(response);
         this.json = response;
         // → Call update() to apply state changes
         this.update();
@@ -65,79 +47,59 @@ let Thinker = {
     update() {
 
         if (this.json) {
-            //update based on LLM output
+            // update based on LLM output
             this.speech = this.json.speech;
-            this.emotion = this.json.emotion;
             this.expression = this.json.expression;
             this.action = this.json.action;
-            this.pressureLevel += this.json.pressure_adjustment;
+            this.emotion = this.json.emotion;
+            
+            this.pressureLevel += parseFloat(this.json.pressure_adjustment);
+
+            // disallow pressure level below 0
             if (this.pressureLevel < 0) {
-                this.pressureLevel = 0;
-            }
-            this.memorySummary = this.memory_update;
-            this.userImpression = this.user_impression_update;
-            // → If pressureLevel >= RESET_THRESHOLD:
-            //      call reset() to wipe memory and switch to "lost" phase
-            if (this.pressureLevel >= this.RESET_THRESHOLD) {
-                this.reset();
+                this.pressureLevel = 0.0;
             }
 
-            // → If memoryPhase was "lost" and user just messaged:
-            //      switch memoryPhase back to "clear" (memorySummary stays empty)
-            if (this.memoryPhase === "lost") {
-                this.memoryPhase = "clear";
+            // if pressure level exceeds 1, escape the game
+            if (this.pressureLevel >= 1) {
+                window.location.reload();
             }
+
+            //update pressure range
             this.pressureRange =
                 this.pressureLevel < 0.3 ? "(0.0-0.3)" :
                     this.pressureLevel < 0.6 ? "(0.3-0.6)" :
                         this.pressureLevel < 0.8 ? "(0.6-0.8)" :
                             "(0.8-1.0)";
-            // → Update memorySummary using json.memory_update
-            this.memorySummary = this.json.memory_update;
-            // → Update userImpression using json.user_impression_update
-            this.userImpression = this.json.user_impression_update;
+
+            //present the thinker based on updated properties
             this.act();
         }
     },
 
-    reset() {
-        // → Set memoryPhase to "lost"
-        this.memoryPhase = "lost";
-        // → Clear memorySummary
-        this.memorySummary = "";
-        // → Clear userImpression
-        this.userImpression = "";
-        // → Reduce pressureLevel to RESET_COOLDOWN
-        this.pressureLevel = this.RESET_COOLDOWN;
-    },
-
     async act() {
+
+        // build image prompt from updated properties
         const imagePrompt = this.buildImagePrompt();
-        // → Use imagePrompt to request images from SDXL Lightning
 
-
+        // use imagePrompt to request images from SDXL Lightning
         if (imagePrompt) {
+            //generate 5 similar images
             await this.generateImages({ prompt: imagePrompt, imageSize: "square", steps: 2, imageNumbers: 5 });
         }
 
-        // let htmlCode = "";
-        // for(let image of this.images){
-        //     htmlCode += `<img src="${image.url}" width="20%">`
-        // }
-        // document.getElementById("outputField").innerHTML = htmlCode;
-        document.getElementById("textField").innerHTML = `<p>${this.speech}</p>`;
-        // → Use speech to request audio from ElevenLabs
-        // → Store the resulting images + audioURL
+        // display speech
+        document.getElementById("thinkerMessageContainer").innerText = this.speech;
+
     },
 
-    /* ===========
-       SECONDARY ENGINE FUNCTIONS
-       =========== */
+    /* =========== SECONDARY ENGINE FUNCTIONS =========== */
 
     buildLLMPrompt({ userMessage }) {
+
         let prompt = "";
 
-        // 1. Core identity blocks
+        // 1.apply core identity rules
         prompt += [
             this.THINKER_IDENTITY.identityEssence,
             this.THINKER_IDENTITY.constraints,
@@ -145,46 +107,49 @@ let Thinker = {
             this.THINKER_IDENTITY.behavioralRules,
             
         ].join("\n") + "\n";
+
+        // 2.add pressure rules if pressure level is beyond 0.3
         if(this.pressureLevel >= 0.3){
             prompt += this.THINKER_IDENTITY.pressureRules + "\n";
         }
+
         const range = this.pressureRange;
         
-        // Action
+        // 3.Action rules
         prompt += "Choose one from the following instruction for action:";
         prompt += this.THINKER_IDENTITY["actions" + range] + "\n";
 
-        // Expression
+        // 4.Expression rules
         prompt += "Choose one from the following instruction for expression:";
         prompt += this.THINKER_IDENTITY["expressions" + range] + "\n";
 
-        // Emotion
+        // 5.Emotion rules
         prompt += "Choose one from the following instruction for emotion:";
         prompt += this.THINKER_IDENTITY["emotion" + range] + "\n";
 
-        // 2. Inject state
+        // 6.Inject state
         prompt += `Current pressure_level: ${this.pressureLevel}. Shift your speech according to the pressure rules.\n`;
         prompt += `Current memory_phase: ${this.memoryPhase}\n`;
         prompt += `Current memory_summary: "${this.memorySummary}"\n`;
         prompt += `Current user_impression: "${this.userImpression}"\n`;
 
-        // 3. User message
+        // 7.User message
         prompt += `User message: "${userMessage}"\n`;
 
-        // 4. Required JSON output schema
+        // 8.Required JSON output schema
         prompt += `Output ONLY the following JSON object in one line, with no text before or after it:\n`;
         prompt += `${this.THINKER_IDENTITY.outputSchema}\n`;
 
-        //console.log(prompt);
         return prompt;
     },
 
+    // retrieve response from LLM based on the LLM prompt
     async generateLLMThought(prompt) {
         try {
             const res = await fetch("http://localhost:5678/webhook/8d84f4fe-79a7-4111-ac80-d482ca33bee8", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ data: prompt })
+                body: JSON.stringify({ data: prompt,memorySessionId:this.memorySessionId })
             });
 
             const data = await res.json();
@@ -197,28 +162,35 @@ let Thinker = {
         }
     },
 
+    
     buildImagePrompt() {
         const range = this.pressureRange;
-        // Appearance
+
+        // 1.Appearance
         let imagePrompt = this.THINKER_IDENTITY["appearance" + range];
 
-        // Camera
+        // 2.Camera
         imagePrompt += `The Camera angle is set to: `;
         imagePrompt += this.THINKER_IDENTITY["camera" + range];
 
-        // Core motion + emotion
+        // 3.Core motion + emotion
         imagePrompt += `The figure is shown performing: ${this.action}.`;
         imagePrompt += `The facial expression is: ${this.expression}.`;
         imagePrompt += `The emotion is: ${this.emotion}.`;
         imagePrompt += `The background should be pure white.`;
+
         return imagePrompt;
     },
 
+    //retrieve set of n images based on image prompt
     async generateImages({ prompt, imageSize, steps, imageNumbers }) {
-        //console.log(prompt);
+
+        //stablize the reults
         const baseSeed = 50000;
+        //add slight variations
         const seed = baseSeed + Math.floor(Math.random() * 3);
 
+   
         const res = await fetch("http://localhost:5678/webhook/ad0e4ce7-a0d2-4bdb-a41a-576c20adc793", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -235,22 +207,15 @@ let Thinker = {
             })
         });
 
+        
         const data = await res.json();
+
         
         this.images[0] = (loadImage(data["0"].image.url));
         this.images[1] = (loadImage(data["1"].image.url));
         this.images[2] = (loadImage(data["2"].image.url));
-        // this.images[3]=( loadImage(data["3"].image.url));
-        // this.images[4]=( loadImage(data["4"].image.url));
-
-        //console.log(this.images);
-
-    },
-
-
-    async generateSpeech() {
+        this.images[3]=( loadImage(data["3"].image.url));
+        this.images[4]=( loadImage(data["4"].image.url));
 
     }
-
-
 };

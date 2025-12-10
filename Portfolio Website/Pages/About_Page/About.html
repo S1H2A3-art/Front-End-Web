@@ -12,7 +12,6 @@
     <link rel="stylesheet" type="text/css" href="../../style.css">
     <link rel="stylesheet" type="text/css" href="About.css">
 
-
     <script src="../../libraries/p5.min.js"></script>
     <script src="../../libraries/p5.sound.min.js"></script>
 
@@ -23,18 +22,18 @@
     <script src="../Project_Pages/DOM.js" defer></script>
     <script src="../menuBar.js" defer></script>
     <script src="About.js" defer></script>
+    <script src="ThinkerActivation.js" defer></script>
 
     <script src="The Thinker/Text.js" defer></script>
     <script src="The Thinker/Grid.js" defer></script>
     <script src="The Thinker/sketch.js" defer></script>
     <script src="The Thinker/Thinker.js" defer></script>
  
-
-
+    <!-- ->menubar.js -->
     <div id="menuBar">
         <div class="menuItems">
             <div class="menuItem" id="Explorer_Page">
-                <a href="../Explorer_Page/Explorer.html">Navigator</a>
+                <a href="../Explorer_Page/Explorer.html">Explorer</a>
             </div>
             <div class="menuItem" id="Archive_Page">
                 <a href="../Archive_Page/Archive.html">Archive</a>
@@ -54,19 +53,21 @@
             Shawn Qiu
         </div>
     </div>
+
+    <!-- page content -->
     <div id="mainDisplay">
         <div id="aboutContent">
             <custom-spacing size="5rem"></custom-spacing>
             <h1 id="aboutTitle">About Me</h1>
 
             <h2>Artist Statement</h2>
-            <text-and-image>
+            <text-and-image leftWidth = "42">
                 ../../Assets/icon.jpeg,,
-
+                <!-- text div added by About.js-->
             </text-and-image>
             <custom-spacing size="5rem"></custom-spacing>
 
-            <h2>Contact Information</h2>
+            
             <p id="contactInfo">
                 Email: shawn.qiu@nyu.edu<br>
                 GitHub: <a href="https://github.com/S1H2A3-art">https://github.com/S1H2A3-art</a><br>
@@ -75,22 +76,26 @@
             </p>
 
             <h2>Interested Concepts</h2>
-            <div id="interestedConceptsContainer"></div>
+            <div id="interestedConceptsContainer">
+                 <!-- text div added by About.js-->
+            </div>
 
             <custom-spacing size="5rem"></custom-spacing>
 
             <h2>Skills</h2>
-            <div id="skillsDescriptionContainer"></div>
+            <div id="skillsDescriptionContainer">
+                 <!-- text div added by About.js-->
+            </div>
 
             <custom-spacing size="5rem"></custom-spacing>
 
             <h2>Featured Projects</h2>
-            <div id="featuredProjectsContainer"></div>
+            <div id="featuredProjectsContainer">
+                 <!-- text div added by About.js-->
+            </div>
 
-            <custom-spacing size="5rem"></custom-spacing>
+            <custom-spacing size="15rem"></custom-spacing>
 
-
-            <custom-spacing size="10rem"></custom-spacing>
         </div>
     </div>
 

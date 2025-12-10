@@ -343,7 +343,7 @@ a{
 .userMessage {
   text-align: right;
   margin: 5px;
-  color: lightblue;
+  color: rgb(255, 207, 242);
 }
 
 .AIMessage, .userMessage, .messageContent{
@@ -353,7 +353,9 @@ a{
   max-width: 100%;            
   display: block;              
   width: 100%;                 
-  hyphens: auto;               
+  hyphens: auto;  
+  margin-top: 1rem;    
+  margin-bottom: 1rem;         
 }
 
 #aiInputContainer {

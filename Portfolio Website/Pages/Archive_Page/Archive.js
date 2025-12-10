@@ -144,6 +144,7 @@ function addProjectDivs(){
    const normalizedInput = input.toLowerCase().trim();
    selectedGenre = normalizedInput;
    document.getElementById("genreLabel").textContent = normalizedInput === "genre" ? "Genre" : input.trim();
+   clearInput();
    searchProjects();
      
   }

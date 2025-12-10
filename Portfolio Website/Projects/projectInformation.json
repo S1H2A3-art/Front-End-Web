@@ -267,11 +267,11 @@
     },
     {
         "title": "Portfolio Website",
-        "secondary_title": "Front-End Web Final Project",
+        "secondary_title": "Front-End Web & Introduction to Machine Learning in the Arts Final Project",
         "category":"HTML, AI, Graphic Design",
         "description":"",
         "date":"November 12, 2025",
-        "concepts":["connection","vessal","consciousness","concept","externalization"],
+        "concepts":["connection","vessal","consciousness","concept","identity"],
         "mini_icon":"Projects/Project_Icons/Portfolio Website.png",
         "large_icon":"",
         "page":"Portfolio_Website/index.html"
@@ -279,11 +279,11 @@
     {
         "title": "The Thinker",
         "secondary_title": "Introduction to Machine Learning in the Arts Final Project",
-        "category":"p5.js, AI",
+        "category":"p5.js, AI, HTML",
         "description":"",
         "date":"November 13, 2025",
-        "concepts":[],
-        "mini_icon":"",
+        "concepts":["simulation", "cycle", "escape", "interaction", "game"],
+        "mini_icon":"Projects/Project_Icons/The Thinker.png",
         "large_icon":"",
         "page":"The_Thinker/index.html"
     }
